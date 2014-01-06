@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B84DAE6187A28260093D257 /* Lead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* Lead.m */; };
+		1B84DAEA187A29D00093D257 /* LeadFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE8187A29D00093D257 /* LeadFormViewController.m */; };
+		1B84DAEB187A29D00093D257 /* LeadFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DAE9187A29D00093D257 /* LeadFormViewController.xib */; };
+		1B84DAF8187A29EB0093D257 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DAF6187A29EB0093D257 /* InfoPlist.strings */; };
+		1B84DAFA187A29EB0093D257 /* LeadCapture_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAF9187A29EB0093D257 /* LeadCapture_Tests.m */; };
+		1B84DB02187A2AC10093D257 /* LeadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB01187A2AC10093D257 /* LeadTests.m */; };
+		1B84DB03187A2AC60093D257 /* Lead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* Lead.m */; };
+		1B84DB09187A2F2D0093D257 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DD81724E16400C9BD79 /* UIKit.framework */; };
+		1B84DB0A187A2F3B0093D257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DDA1724E16400C9BD79 /* Foundation.framework */; };
+		1B84DB0C187A2F480093D257 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84DB0B187A2F480093D257 /* XCTest.framework */; };
+		1B84DB0E187A30E60093D257 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84DB0D187A30E60093D257 /* libOCMock.a */; };
 		4F3F413517E7CA5C008B3283 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413417E7CA5C008B3283 /* ImageIO.framework */; };
 		4F3F413617E7CA71008B3283 /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F412B17E7C9CA008B3283 /* libMKNetworkKit-iOS.a */; };
 		4F3F413717E7CA84008B3283 /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413317E7C9CA008B3283 /* libSalesforceNetworkSDK.a */; };
@@ -53,7 +64,36 @@
 		82BBB5C01793946800374DD8 /* libSalesforceSDKCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BBB5BF1793946800374DD8 /* libSalesforceSDKCore.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1B84DAFC187A29EB0093D257 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 824A9DCD1724E16400C9BD79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 824A9DD41724E16400C9BD79;
+			remoteInfo = LeadCapture;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1B84DAE4187A28260093D257 /* Lead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lead.h; path = Models/Lead.h; sourceTree = "<group>"; };
+		1B84DAE5187A28260093D257 /* Lead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lead.m; path = Models/Lead.m; sourceTree = "<group>"; };
+		1B84DAE7187A29D00093D257 /* LeadFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeadFormViewController.h; path = ViewControllers/LeadFormViewController.h; sourceTree = "<group>"; };
+		1B84DAE8187A29D00093D257 /* LeadFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeadFormViewController.m; path = ViewControllers/LeadFormViewController.m; sourceTree = "<group>"; };
+		1B84DAE9187A29D00093D257 /* LeadFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeadFormViewController.xib; path = ViewControllers/LeadFormViewController.xib; sourceTree = "<group>"; };
+		1B84DAF0187A29EB0093D257 /* LeadCapture Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LeadCapture Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B84DAF5187A29EB0093D257 /* LeadCapture Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeadCapture Tests-Info.plist"; sourceTree = "<group>"; };
+		1B84DAF7187A29EB0093D257 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B84DAF9187A29EB0093D257 /* LeadCapture_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeadCapture_Tests.m; sourceTree = "<group>"; };
+		1B84DAFB187A29EB0093D257 /* LeadCapture Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeadCapture Tests-Prefix.pch"; sourceTree = "<group>"; };
+		1B84DB01187A2AC10093D257 /* LeadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeadTests.m; sourceTree = "<group>"; };
+		1B84DB0B187A2F480093D257 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1B84DB0D187A30E60093D257 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = lib/libOCMock.a; sourceTree = "<group>"; };
+		1B84DB10187A31700093D257 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		1B84DB11187A31700093D257 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		1B84DB12187A31700093D257 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		1B84DB13187A31700093D257 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		1B84DB14187A31700093D257 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		1B84DB15187A31700093D257 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		4F3F412517E7C9CA008B3283 /* MKNetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
 		4F3F412617E7C9CA008B3283 /* MKNetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
 		4F3F412717E7C9CA008B3283 /* MKNetworkOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
@@ -72,31 +112,31 @@
 		824A9DD81724E16400C9BD79 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		824A9DDA1724E16400C9BD79 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		824A9DDC1724E16400C9BD79 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		824A9DE01724E16400C9BD79 /* LeadCapture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeadCapture-Info.plist"; sourceTree = "<group>"; };
+		824A9DE01724E16400C9BD79 /* LeadCapture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LeadCapture-Info.plist"; path = "SupportingFiles/LeadCapture-Info.plist"; sourceTree = "<group>"; };
 		824A9DE21724E16400C9BD79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		824A9DE41724E16400C9BD79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		824A9DE61724E16400C9BD79 /* LeadCapture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeadCapture-Prefix.pch"; sourceTree = "<group>"; };
+		824A9DE41724E16400C9BD79 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SupportingFiles/main.m; sourceTree = "<group>"; };
+		824A9DE61724E16400C9BD79 /* LeadCapture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LeadCapture-Prefix.pch"; path = "SupportingFiles/LeadCapture-Prefix.pch"; sourceTree = "<group>"; };
 		824A9E311724E2A900C9BD79 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		824A9E321724E2A900C9BD79 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		824A9E341724E45000C9BD79 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		824A9E351724E45100C9BD79 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		824A9E371724E58100C9BD79 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
-		824A9E381724E58200C9BD79 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
-		824A9E391724E58200C9BD79 /* InitialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
+		824A9E341724E45000C9BD79 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ViewControllers/RootViewController.h; sourceTree = "<group>"; };
+		824A9E351724E45100C9BD79 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ViewControllers/RootViewController.m; sourceTree = "<group>"; };
+		824A9E371724E58100C9BD79 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialViewController.h; path = ViewControllers/InitialViewController.h; sourceTree = "<group>"; };
+		824A9E381724E58200C9BD79 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialViewController.m; path = ViewControllers/InitialViewController.m; sourceTree = "<group>"; };
+		824A9E391724E58200C9BD79 /* InitialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InitialViewController.xib; path = ViewControllers/InitialViewController.xib; sourceTree = "<group>"; };
 		824A9E3C1724E9F400C9BD79 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		824A9E3E1724EC6300C9BD79 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		824A9E401724ECC600C9BD79 /* SalesforceSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SalesforceSDKResources.bundle; sourceTree = "<group>"; };
-		824A9E5B1724F02D00C9BD79 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
-		824A9E5C1724F02D00C9BD79 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
-		824A9E5D1724F02D00C9BD79 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		824A9E5E1724F02D00C9BD79 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		824A9E631724F03D00C9BD79 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		824A9E641724F03D00C9BD79 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
-		824A9E651724F03D00C9BD79 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		824A9E661724F03D00C9BD79 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
-		824A9E671724F03D00C9BD79 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		824A9E681724F03D00C9BD79 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		824A9E691724F03D00C9BD79 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		824A9E3E1724EC6300C9BD79 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
+		824A9E401724ECC600C9BD79 /* SalesforceSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceSDKResources.bundle; path = Resources/SalesforceSDKResources.bundle; sourceTree = "<group>"; };
+		824A9E5B1724F02D00C9BD79 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icon-72.png"; sourceTree = "<group>"; };
+		824A9E5C1724F02D00C9BD79 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72@2x.png"; path = "Resources/icon-72@2x.png"; sourceTree = "<group>"; };
+		824A9E5D1724F02D00C9BD79 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
+		824A9E5E1724F02D00C9BD79 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icon@2x.png"; sourceTree = "<group>"; };
+		824A9E631724F03D00C9BD79 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		824A9E641724F03D00C9BD79 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "Resources/Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		824A9E651724F03D00C9BD79 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		824A9E661724F03D00C9BD79 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "Resources/Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		824A9E671724F03D00C9BD79 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "Resources/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		824A9E681724F03D00C9BD79 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		824A9E691724F03D00C9BD79 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		824A9F321725079000C9BD79 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		824A9F331725079000C9BD79 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		824A9F341725079000C9BD79 /* openssl_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openssl_license.txt; sourceTree = "<group>"; };
@@ -181,6 +221,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B84DAED187A29EB0093D257 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B84DB0E187A30E60093D257 /* libOCMock.a in Frameworks */,
+				1B84DB0C187A2F480093D257 /* XCTest.framework in Frameworks */,
+				1B84DB09187A2F2D0093D257 /* UIKit.framework in Frameworks */,
+				1B84DB0A187A2F3B0093D257 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824A9DD21724E16400C9BD79 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +264,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B84DAE2187A27F00093D257 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DAE7187A29D00093D257 /* LeadFormViewController.h */,
+				1B84DAE8187A29D00093D257 /* LeadFormViewController.m */,
+				1B84DAE9187A29D00093D257 /* LeadFormViewController.xib */,
+				824A9E371724E58100C9BD79 /* InitialViewController.h */,
+				824A9E381724E58200C9BD79 /* InitialViewController.m */,
+				824A9E391724E58200C9BD79 /* InitialViewController.xib */,
+				824A9E341724E45000C9BD79 /* RootViewController.h */,
+				824A9E351724E45100C9BD79 /* RootViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1B84DAE3187A280F0093D257 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DAE4187A28260093D257 /* Lead.h */,
+				1B84DAE5187A28260093D257 /* Lead.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1B84DAF3187A29EB0093D257 /* LeadCapture Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DAF9187A29EB0093D257 /* LeadCapture_Tests.m */,
+				1B84DAF4187A29EB0093D257 /* Supporting Files */,
+				1B84DB01187A2AC10093D257 /* LeadTests.m */,
+			);
+			path = "LeadCapture Tests";
+			sourceTree = "<group>";
+		};
+		1B84DAF4187A29EB0093D257 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DAF5187A29EB0093D257 /* LeadCapture Tests-Info.plist */,
+				1B84DAF6187A29EB0093D257 /* InfoPlist.strings */,
+				1B84DAFB187A29EB0093D257 /* LeadCapture Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B84DB0F187A31700093D257 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DB10187A31700093D257 /* NSNotificationCenter+OCMAdditions.h */,
+				1B84DB11187A31700093D257 /* OCMArg.h */,
+				1B84DB12187A31700093D257 /* OCMConstraint.h */,
+				1B84DB13187A31700093D257 /* OCMock.h */,
+				1B84DB14187A31700093D257 /* OCMockObject.h */,
+				1B84DB15187A31700093D257 /* OCMockRecorder.h */,
+			);
+			name = OCMock;
+			path = lib/OCMock;
+			sourceTree = "<group>";
+		};
 		4F3F412217E7C9CA008B3283 /* MKNetworkKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				824A9DDE1724E16400C9BD79 /* LeadCapture */,
+				1B84DAF3187A29EB0093D257 /* LeadCapture Tests */,
 				824A9DD71724E16400C9BD79 /* Frameworks */,
 				824A9DD61724E16400C9BD79 /* Products */,
 			);
@@ -284,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				824A9DD51724E16400C9BD79 /* LeadCapture.app */,
+				1B84DAF0187A29EB0093D257 /* LeadCapture Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,6 +402,9 @@
 		824A9DD71724E16400C9BD79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B84DB0F187A31700093D257 /* OCMock */,
+				1B84DB0D187A30E60093D257 /* libOCMock.a */,
+				1B84DB0B187A2F480093D257 /* XCTest.framework */,
 				824A9FE71725098F00C9BD79 /* libxml2.dylib */,
 				824A9FE91725099600C9BD79 /* libz.dylib */,
 				4F3F413417E7CA5C008B3283 /* ImageIO.framework */,
@@ -317,7 +431,7 @@
 				824A9E421724EF9800C9BD79 /* Resources */,
 				824A9DDF1724E16400C9BD79 /* Supporting Files */,
 			);
-			path = "LeadCapture";
+			path = LeadCapture;
 			sourceTree = "<group>";
 		};
 		824A9DDF1724E16400C9BD79 /* Supporting Files */ = {
@@ -334,13 +448,10 @@
 		824A9E301724E2A900C9BD79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1B84DAE3187A280F0093D257 /* Models */,
+				1B84DAE2187A27F00093D257 /* View Controllers */,
 				824A9E311724E2A900C9BD79 /* AppDelegate.h */,
 				824A9E321724E2A900C9BD79 /* AppDelegate.m */,
-				824A9E371724E58100C9BD79 /* InitialViewController.h */,
-				824A9E381724E58200C9BD79 /* InitialViewController.m */,
-				824A9E391724E58200C9BD79 /* InitialViewController.xib */,
-				824A9E341724E45000C9BD79 /* RootViewController.h */,
-				824A9E351724E45100C9BD79 /* RootViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -578,6 +689,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B84DAEF187A29EB0093D257 /* LeadCapture Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B84DAFE187A29EB0093D257 /* Build configuration list for PBXNativeTarget "LeadCapture Tests" */;
+			buildPhases = (
+				1B84DAEC187A29EB0093D257 /* Sources */,
+				1B84DAED187A29EB0093D257 /* Frameworks */,
+				1B84DAEE187A29EB0093D257 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B84DAFD187A29EB0093D257 /* PBXTargetDependency */,
+			);
+			name = "LeadCapture Tests";
+			productName = "LeadCapture Tests";
+			productReference = 1B84DAF0187A29EB0093D257 /* LeadCapture Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		824A9DD41724E16400C9BD79 /* LeadCapture */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 824A9DFB1724E16400C9BD79 /* Build configuration list for PBXNativeTarget "LeadCapture" */;
@@ -590,8 +719,8 @@
 			);
 			dependencies = (
 			);
-			name = "LeadCapture";
-			productName = "LeadCapture";
+			name = LeadCapture;
+			productName = LeadCapture;
 			productReference = 824A9DD51724E16400C9BD79 /* LeadCapture.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -602,7 +731,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "LightMedium";
+				ORGANIZATIONNAME = LightMedium;
+				TargetAttributes = {
+					1B84DAEF187A29EB0093D257 = {
+						TestTargetID = 824A9DD41724E16400C9BD79;
+					};
+				};
 			};
 			buildConfigurationList = 824A9DD01724E16400C9BD79 /* Build configuration list for PBXProject "LeadCapture" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -617,11 +751,20 @@
 			projectRoot = "";
 			targets = (
 				824A9DD41724E16400C9BD79 /* LeadCapture */,
+				1B84DAEF187A29EB0093D257 /* LeadCapture Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B84DAEE187A29EB0093D257 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B84DAF8187A29EB0093D257 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824A9DD31724E16400C9BD79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,6 +776,7 @@
 				824A9E411724ECC600C9BD79 /* SalesforceSDKResources.bundle in Resources */,
 				824A9E5F1724F02D00C9BD79 /* icon-72.png in Resources */,
 				824A9E601724F02D00C9BD79 /* icon-72@2x.png in Resources */,
+				1B84DAEB187A29D00093D257 /* LeadFormViewController.xib in Resources */,
 				824A9E611724F02D00C9BD79 /* icon.png in Resources */,
 				824A9E621724F02D00C9BD79 /* icon@2x.png in Resources */,
 				824A9E6A1724F03D00C9BD79 /* Default-568h@2x.png in Resources */,
@@ -650,10 +794,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B84DAEC187A29EB0093D257 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B84DAFA187A29EB0093D257 /* LeadCapture_Tests.m in Sources */,
+				1B84DB02187A2AC10093D257 /* LeadTests.m in Sources */,
+				1B84DB03187A2AC60093D257 /* Lead.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		824A9DD11724E16400C9BD79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B84DAEA187A29D00093D257 /* LeadFormViewController.m in Sources */,
+				1B84DAE6187A28260093D257 /* Lead.m in Sources */,
 				824A9DE51724E16400C9BD79 /* main.m in Sources */,
 				824A9E331724E2A900C9BD79 /* AppDelegate.m in Sources */,
 				824A9E361724E45100C9BD79 /* RootViewController.m in Sources */,
@@ -663,18 +819,126 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1B84DAFD187A29EB0093D257 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 824A9DD41724E16400C9BD79 /* LeadCapture */;
+			targetProxy = 1B84DAFC187A29EB0093D257 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		1B84DAF6187A29EB0093D257 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B84DAF7187A29EB0093D257 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		824A9DE11724E16400C9BD79 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				824A9DE21724E16400C9BD79 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1B84DAFF187A29EB0093D257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeadCapture.app/LeadCapture";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeadCapture Tests/LeadCapture Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/lib/OCMock",
+				);
+				INFOPLIST_FILE = "LeadCapture Tests/LeadCapture Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+					"-force_load",
+					"$(SRCROOT)/lib/libOCMock.a",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1B84DB00187A29EB0093D257 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeadCapture.app/LeadCapture";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeadCapture Tests/LeadCapture Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "LeadCapture Tests/LeadCapture Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+					"-force_load",
+					"$(SRCROOT)/lib/libOCMock.a",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		824A9DF91724E16400C9BD79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -737,7 +1001,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LeadCapture/LeadCapture-Prefix.pch";
+				GCC_PREFIX_HEADER = "LeadCapture/SupportingFiles/LeadCapture-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceOAuth/Headers",
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNetworkSDK/Headers",
@@ -745,7 +1009,7 @@
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceSDKCore/Headers",
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceCommonUtils/Headers",
 				);
-				INFOPLIST_FILE = "LeadCapture/LeadCapture-Info.plist";
+				INFOPLIST_FILE = "LeadCapture/SupportingFiles/LeadCapture-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/LeadCapture/Dependencies/openssl\"",
@@ -770,7 +1034,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LeadCapture/LeadCapture-Prefix.pch";
+				GCC_PREFIX_HEADER = "LeadCapture/SupportingFiles/LeadCapture-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceOAuth/Headers",
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNetworkSDK/Headers",
@@ -778,7 +1042,7 @@
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceSDKCore/Headers",
 					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceCommonUtils/Headers",
 				);
-				INFOPLIST_FILE = "LeadCapture/LeadCapture-Info.plist";
+				INFOPLIST_FILE = "LeadCapture/SupportingFiles/LeadCapture-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/LeadCapture/Dependencies/openssl\"",
@@ -802,6 +1066,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B84DAFE187A29EB0093D257 /* Build configuration list for PBXNativeTarget "LeadCapture Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B84DAFF187A29EB0093D257 /* Debug */,
+				1B84DB00187A29EB0093D257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		824A9DD01724E16400C9BD79 /* Build configuration list for PBXProject "LeadCapture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
