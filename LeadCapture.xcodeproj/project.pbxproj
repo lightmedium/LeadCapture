@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B84DAE6187A28260093D257 /* Lead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* Lead.m */; };
-		1B84DAEA187A29D00093D257 /* LeadFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE8187A29D00093D257 /* LeadFormViewController.m */; };
-		1B84DAEB187A29D00093D257 /* LeadFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DAE9187A29D00093D257 /* LeadFormViewController.xib */; };
-		1B84DAF8187A29EB0093D257 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DAF6187A29EB0093D257 /* InfoPlist.strings */; };
-		1B84DAFA187A29EB0093D257 /* LeadCapture_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAF9187A29EB0093D257 /* LeadCapture_Tests.m */; };
-		1B84DB02187A2AC10093D257 /* LeadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB01187A2AC10093D257 /* LeadTests.m */; };
-		1B84DB03187A2AC60093D257 /* Lead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* Lead.m */; };
-		1B84DB09187A2F2D0093D257 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DD81724E16400C9BD79 /* UIKit.framework */; };
-		1B84DB0A187A2F3B0093D257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DDA1724E16400C9BD79 /* Foundation.framework */; };
-		1B84DB0C187A2F480093D257 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84DB0B187A2F480093D257 /* XCTest.framework */; };
-		1B84DB0E187A30E60093D257 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84DB0D187A30E60093D257 /* libOCMock.a */; };
+		1B03779E187A4C1300A3FC20 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD560C2187A4A87004905C2 /* XCTest.framework */; };
+		1B03779F187A4C1300A3FC20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DDA1724E16400C9BD79 /* Foundation.framework */; };
+		1B0377A0187A4C1300A3FC20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84DB39187A42840093D257 /* UIKit.framework */; };
+		1B0377A6187A4C1300A3FC20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B0377A4187A4C1300A3FC20 /* InfoPlist.strings */; };
+		1B0377AF187A4C3B00A3FC20 /* WDCLeadFormTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB37187A3EAA0093D257 /* WDCLeadFormTableViewControllerTests.m */; };
+		1B0377B0187A4C3E00A3FC20 /* LeadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB01187A2AC10093D257 /* LeadTests.m */; };
+		1B84DAE6187A28260093D257 /* WDCLead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* WDCLead.m */; };
+		1B84DB19187A34FD0093D257 /* WDCLeadFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB17187A34FD0093D257 /* WDCLeadFormTableViewController.m */; };
+		1B84DB1B187A34FD0093D257 /* WDCLeadFormTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DB18187A34FD0093D257 /* WDCLeadFormTableViewController.xib */; };
+		1B84DB20187A35CB0093D257 /* WDCLeadFormTableViewControllerDef.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DB1F187A35CB0093D257 /* WDCLeadFormTableViewControllerDef.plist */; };
+		1B84DB23187A387E0093D257 /* WDCTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB22187A387E0093D257 /* WDCTextInputCell.m */; };
+		1B84DB27187A38AC0093D257 /* WDCFormSubmitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB26187A38AC0093D257 /* WDCFormSubmitCell.m */; };
+		1B84DB2B187A39930093D257 /* WDCConfigDrivenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB2A187A39930093D257 /* WDCConfigDrivenTableViewController.m */; };
+		1B84DB33187A3DAB0093D257 /* NSMutableString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB31187A3DAB0093D257 /* NSMutableString+Utilities.m */; };
+		1B84DB3A187A42840093D257 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B84DB39187A42840093D257 /* UIKit.framework */; };
+		1BCD7049187A5056000F2576 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCD7048187A5056000F2576 /* libOCMock.a */; };
 		4F3F413517E7CA5C008B3283 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413417E7CA5C008B3283 /* ImageIO.framework */; };
 		4F3F413617E7CA71008B3283 /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F412B17E7C9CA008B3283 /* libMKNetworkKit-iOS.a */; };
 		4F3F413717E7CA84008B3283 /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413317E7C9CA008B3283 /* libSalesforceNetworkSDK.a */; };
-		824A9DD91724E16400C9BD79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DD81724E16400C9BD79 /* UIKit.framework */; };
 		824A9DDB1724E16400C9BD79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DDA1724E16400C9BD79 /* Foundation.framework */; };
 		824A9DDD1724E16400C9BD79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9DDC1724E16400C9BD79 /* CoreGraphics.framework */; };
 		824A9DE31724E16400C9BD79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 824A9DE11724E16400C9BD79 /* InfoPlist.strings */; };
@@ -65,7 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1B84DAFC187A29EB0093D257 /* PBXContainerItemProxy */ = {
+		1B0377AA187A4C1300A3FC20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 824A9DCD1724E16400C9BD79 /* Project object */;
 			proxyType = 1;
@@ -75,25 +79,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B84DAE4187A28260093D257 /* Lead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lead.h; path = Models/Lead.h; sourceTree = "<group>"; };
-		1B84DAE5187A28260093D257 /* Lead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lead.m; path = Models/Lead.m; sourceTree = "<group>"; };
-		1B84DAE7187A29D00093D257 /* LeadFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeadFormViewController.h; path = ViewControllers/LeadFormViewController.h; sourceTree = "<group>"; };
-		1B84DAE8187A29D00093D257 /* LeadFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeadFormViewController.m; path = ViewControllers/LeadFormViewController.m; sourceTree = "<group>"; };
-		1B84DAE9187A29D00093D257 /* LeadFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeadFormViewController.xib; path = ViewControllers/LeadFormViewController.xib; sourceTree = "<group>"; };
-		1B84DAF0187A29EB0093D257 /* LeadCapture Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LeadCapture Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B84DAF5187A29EB0093D257 /* LeadCapture Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeadCapture Tests-Info.plist"; sourceTree = "<group>"; };
-		1B84DAF7187A29EB0093D257 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B84DAF9187A29EB0093D257 /* LeadCapture_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeadCapture_Tests.m; sourceTree = "<group>"; };
-		1B84DAFB187A29EB0093D257 /* LeadCapture Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeadCapture Tests-Prefix.pch"; sourceTree = "<group>"; };
+		1B03779D187A4C1300A3FC20 /* LeadCapture Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LeadCapture Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0377A3187A4C1300A3FC20 /* LeadCapture Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeadCapture Tests-Info.plist"; sourceTree = "<group>"; };
+		1B0377A5187A4C1300A3FC20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B0377A9187A4C1300A3FC20 /* LeadCapture Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeadCapture Tests-Prefix.pch"; sourceTree = "<group>"; };
+		1B84DAE4187A28260093D257 /* WDCLead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCLead.h; path = Models/WDCLead.h; sourceTree = "<group>"; };
+		1B84DAE5187A28260093D257 /* WDCLead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCLead.m; path = Models/WDCLead.m; sourceTree = "<group>"; };
 		1B84DB01187A2AC10093D257 /* LeadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeadTests.m; sourceTree = "<group>"; };
-		1B84DB0B187A2F480093D257 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1B84DB0D187A30E60093D257 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = lib/libOCMock.a; sourceTree = "<group>"; };
-		1B84DB10187A31700093D257 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
-		1B84DB11187A31700093D257 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
-		1B84DB12187A31700093D257 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
-		1B84DB13187A31700093D257 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
-		1B84DB14187A31700093D257 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
-		1B84DB15187A31700093D257 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		1B84DB16187A34FD0093D257 /* WDCLeadFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCLeadFormTableViewController.h; path = ViewControllers/WDCLeadFormTableViewController.h; sourceTree = "<group>"; };
+		1B84DB17187A34FD0093D257 /* WDCLeadFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCLeadFormTableViewController.m; path = ViewControllers/WDCLeadFormTableViewController.m; sourceTree = "<group>"; };
+		1B84DB18187A34FD0093D257 /* WDCLeadFormTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDCLeadFormTableViewController.xib; path = ViewControllers/WDCLeadFormTableViewController.xib; sourceTree = "<group>"; };
+		1B84DB1F187A35CB0093D257 /* WDCLeadFormTableViewControllerDef.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = WDCLeadFormTableViewControllerDef.plist; path = Resources/FormDefinitions/WDCLeadFormTableViewControllerDef.plist; sourceTree = "<group>"; };
+		1B84DB21187A387E0093D257 /* WDCTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCTextInputCell.h; path = TableViewCells/WDCTextInputCell.h; sourceTree = "<group>"; };
+		1B84DB22187A387E0093D257 /* WDCTextInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCTextInputCell.m; path = TableViewCells/WDCTextInputCell.m; sourceTree = "<group>"; };
+		1B84DB25187A38AC0093D257 /* WDCFormSubmitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCFormSubmitCell.h; path = TableViewCells/WDCFormSubmitCell.h; sourceTree = "<group>"; };
+		1B84DB26187A38AC0093D257 /* WDCFormSubmitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCFormSubmitCell.m; path = TableViewCells/WDCFormSubmitCell.m; sourceTree = "<group>"; };
+		1B84DB29187A39930093D257 /* WDCConfigDrivenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCConfigDrivenTableViewController.h; path = ViewControllers/WDCConfigDrivenTableViewController.h; sourceTree = "<group>"; };
+		1B84DB2A187A39930093D257 /* WDCConfigDrivenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCConfigDrivenTableViewController.m; path = ViewControllers/WDCConfigDrivenTableViewController.m; sourceTree = "<group>"; };
+		1B84DB2F187A3DAB0093D257 /* NSMutableString_UtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableString_UtilitiesTests.m; sourceTree = "<group>"; };
+		1B84DB30187A3DAB0093D257 /* NSMutableString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+Utilities.h"; path = "lib/NSMutableString+Utilities.h"; sourceTree = "<group>"; };
+		1B84DB31187A3DAB0093D257 /* NSMutableString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+Utilities.m"; path = "lib/NSMutableString+Utilities.m"; sourceTree = "<group>"; };
+		1B84DB37187A3EAA0093D257 /* WDCLeadFormTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCLeadFormTableViewControllerTests.m; sourceTree = "<group>"; };
+		1B84DB39187A42840093D257 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1BCD7048187A5056000F2576 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../../GoodHaggle/GoodHaggle_ios/GoodHaggle/lib/libOCMock.a; sourceTree = "<group>"; };
+		1BCD704B187A508C000F2576 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "../lib/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		1BCD704C187A508C000F2576 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = ../lib/OCMock/OCMArg.h; sourceTree = "<group>"; };
+		1BCD704D187A508C000F2576 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = ../lib/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
+		1BCD704E187A508C000F2576 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = ../lib/OCMock/OCMock.h; sourceTree = "<group>"; };
+		1BCD704F187A508C000F2576 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = ../lib/OCMock/OCMockObject.h; sourceTree = "<group>"; };
+		1BCD7050187A508C000F2576 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = ../lib/OCMock/OCMockRecorder.h; sourceTree = "<group>"; };
+		1BD560C2187A4A87004905C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4F3F412517E7C9CA008B3283 /* MKNetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
 		4F3F412617E7C9CA008B3283 /* MKNetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
 		4F3F412717E7C9CA008B3283 /* MKNetworkOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
@@ -109,7 +124,6 @@
 		4F3F413417E7CA5C008B3283 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4F57794817F4CF5B004706EE /* SFRestAPI+Files.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+Files.h"; sourceTree = "<group>"; };
 		824A9DD51724E16400C9BD79 /* LeadCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeadCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		824A9DD81724E16400C9BD79 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		824A9DDA1724E16400C9BD79 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		824A9DDC1724E16400C9BD79 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		824A9DE01724E16400C9BD79 /* LeadCapture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LeadCapture-Info.plist"; path = "SupportingFiles/LeadCapture-Info.plist"; sourceTree = "<group>"; };
@@ -221,14 +235,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1B84DAED187A29EB0093D257 /* Frameworks */ = {
+		1B03779A187A4C1300A3FC20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B84DB0E187A30E60093D257 /* libOCMock.a in Frameworks */,
-				1B84DB0C187A2F480093D257 /* XCTest.framework in Frameworks */,
-				1B84DB09187A2F2D0093D257 /* UIKit.framework in Frameworks */,
-				1B84DB0A187A2F3B0093D257 /* Foundation.framework in Frameworks */,
+				1BCD7049187A5056000F2576 /* libOCMock.a in Frameworks */,
+				1B03779E187A4C1300A3FC20 /* XCTest.framework in Frameworks */,
+				1B0377A0187A4C1300A3FC20 /* UIKit.framework in Frameworks */,
+				1B03779F187A4C1300A3FC20 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B84DB3A187A42840093D257 /* UIKit.framework in Frameworks */,
 				4F3F413717E7CA84008B3283 /* libSalesforceNetworkSDK.a in Frameworks */,
 				4F3F413617E7CA71008B3283 /* libMKNetworkKit-iOS.a in Frameworks */,
 				824A9FDD1725079100C9BD79 /* libcrypto.a in Frameworks */,
@@ -247,7 +262,6 @@
 				824A9FDE1725079100C9BD79 /* libssl.a in Frameworks */,
 				824A9FE81725098F00C9BD79 /* libxml2.dylib in Frameworks */,
 				824A9FEA1725099600C9BD79 /* libz.dylib in Frameworks */,
-				824A9DD91724E16400C9BD79 /* UIKit.framework in Frameworks */,
 				4F3F413517E7CA5C008B3283 /* ImageIO.framework in Frameworks */,
 				824A9DDB1724E16400C9BD79 /* Foundation.framework in Frameworks */,
 				824A9FEC17250ADA00C9BD79 /* CFNetwork.framework in Frameworks */,
@@ -264,17 +278,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B0377A1187A4C1300A3FC20 /* LeadCapture Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DB01187A2AC10093D257 /* LeadTests.m */,
+				1B84DB37187A3EAA0093D257 /* WDCLeadFormTableViewControllerTests.m */,
+				1B0377A2187A4C1300A3FC20 /* Supporting Files */,
+			);
+			path = "LeadCapture Tests";
+			sourceTree = "<group>";
+		};
+		1B0377A2187A4C1300A3FC20 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B0377A3187A4C1300A3FC20 /* LeadCapture Tests-Info.plist */,
+				1B0377A4187A4C1300A3FC20 /* InfoPlist.strings */,
+				1B0377A9187A4C1300A3FC20 /* LeadCapture Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1B84DAE2187A27F00093D257 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B84DAE7187A29D00093D257 /* LeadFormViewController.h */,
-				1B84DAE8187A29D00093D257 /* LeadFormViewController.m */,
-				1B84DAE9187A29D00093D257 /* LeadFormViewController.xib */,
 				824A9E371724E58100C9BD79 /* InitialViewController.h */,
 				824A9E381724E58200C9BD79 /* InitialViewController.m */,
 				824A9E391724E58200C9BD79 /* InitialViewController.xib */,
 				824A9E341724E45000C9BD79 /* RootViewController.h */,
 				824A9E351724E45100C9BD79 /* RootViewController.m */,
+				1B84DB16187A34FD0093D257 /* WDCLeadFormTableViewController.h */,
+				1B84DB17187A34FD0093D257 /* WDCLeadFormTableViewController.m */,
+				1B84DB18187A34FD0093D257 /* WDCLeadFormTableViewController.xib */,
+				1B84DB29187A39930093D257 /* WDCConfigDrivenTableViewController.h */,
+				1B84DB2A187A39930093D257 /* WDCConfigDrivenTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -282,44 +318,61 @@
 		1B84DAE3187A280F0093D257 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1B84DAE4187A28260093D257 /* Lead.h */,
-				1B84DAE5187A28260093D257 /* Lead.m */,
+				1B84DAE4187A28260093D257 /* WDCLead.h */,
+				1B84DAE5187A28260093D257 /* WDCLead.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		1B84DAF3187A29EB0093D257 /* LeadCapture Tests */ = {
+		1B84DB1D187A356D0093D257 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1B84DAF9187A29EB0093D257 /* LeadCapture_Tests.m */,
-				1B84DAF4187A29EB0093D257 /* Supporting Files */,
-				1B84DB01187A2AC10093D257 /* LeadTests.m */,
+				1B84DB21187A387E0093D257 /* WDCTextInputCell.h */,
+				1B84DB22187A387E0093D257 /* WDCTextInputCell.m */,
+				1B84DB25187A38AC0093D257 /* WDCFormSubmitCell.h */,
+				1B84DB26187A38AC0093D257 /* WDCFormSubmitCell.m */,
 			);
-			path = "LeadCapture Tests";
+			name = "TableView Cells";
 			sourceTree = "<group>";
 		};
-		1B84DAF4187A29EB0093D257 /* Supporting Files */ = {
+		1B84DB1E187A359A0093D257 /* form definitions */ = {
 			isa = PBXGroup;
 			children = (
-				1B84DAF5187A29EB0093D257 /* LeadCapture Tests-Info.plist */,
-				1B84DAF6187A29EB0093D257 /* InfoPlist.strings */,
-				1B84DAFB187A29EB0093D257 /* LeadCapture Tests-Prefix.pch */,
+				1B84DB1F187A35CB0093D257 /* WDCLeadFormTableViewControllerDef.plist */,
 			);
-			name = "Supporting Files";
+			name = "form definitions";
 			sourceTree = "<group>";
 		};
-		1B84DB0F187A31700093D257 /* OCMock */ = {
+		1B84DB2D187A3D6B0093D257 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				1B84DB10187A31700093D257 /* NSNotificationCenter+OCMAdditions.h */,
-				1B84DB11187A31700093D257 /* OCMArg.h */,
-				1B84DB12187A31700093D257 /* OCMConstraint.h */,
-				1B84DB13187A31700093D257 /* OCMock.h */,
-				1B84DB14187A31700093D257 /* OCMockObject.h */,
-				1B84DB15187A31700093D257 /* OCMockRecorder.h */,
+				1BCD704A187A508C000F2576 /* OCMock */,
+				1B84DB2E187A3DAB0093D257 /* LMUtilities Tests */,
+				1B84DB30187A3DAB0093D257 /* NSMutableString+Utilities.h */,
+				1B84DB31187A3DAB0093D257 /* NSMutableString+Utilities.m */,
 			);
-			name = OCMock;
-			path = lib/OCMock;
+			name = lib;
+			sourceTree = "<group>";
+		};
+		1B84DB2E187A3DAB0093D257 /* LMUtilities Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1B84DB2F187A3DAB0093D257 /* NSMutableString_UtilitiesTests.m */,
+			);
+			path = "LMUtilities Tests";
+			sourceTree = "<group>";
+		};
+		1BCD704A187A508C000F2576 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				1BCD704B187A508C000F2576 /* NSNotificationCenter+OCMAdditions.h */,
+				1BCD704C187A508C000F2576 /* OCMArg.h */,
+				1BCD704D187A508C000F2576 /* OCMConstraint.h */,
+				1BCD704E187A508C000F2576 /* OCMock.h */,
+				1BCD704F187A508C000F2576 /* OCMockObject.h */,
+				1BCD7050187A508C000F2576 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 		4F3F412217E7C9CA008B3283 /* MKNetworkKit-iOS */ = {
@@ -384,9 +437,10 @@
 			isa = PBXGroup;
 			children = (
 				824A9DDE1724E16400C9BD79 /* LeadCapture */,
-				1B84DAF3187A29EB0093D257 /* LeadCapture Tests */,
+				1B0377A1187A4C1300A3FC20 /* LeadCapture Tests */,
 				824A9DD71724E16400C9BD79 /* Frameworks */,
 				824A9DD61724E16400C9BD79 /* Products */,
+				1B84DB2D187A3D6B0093D257 /* lib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -394,7 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				824A9DD51724E16400C9BD79 /* LeadCapture.app */,
-				1B84DAF0187A29EB0093D257 /* LeadCapture Tests.xctest */,
+				1B03779D187A4C1300A3FC20 /* LeadCapture Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -402,9 +456,9 @@
 		824A9DD71724E16400C9BD79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1B84DB0F187A31700093D257 /* OCMock */,
-				1B84DB0D187A30E60093D257 /* libOCMock.a */,
-				1B84DB0B187A2F480093D257 /* XCTest.framework */,
+				1BCD7048187A5056000F2576 /* libOCMock.a */,
+				1BD560C2187A4A87004905C2 /* XCTest.framework */,
+				1B84DB39187A42840093D257 /* UIKit.framework */,
 				824A9FE71725098F00C9BD79 /* libxml2.dylib */,
 				824A9FE91725099600C9BD79 /* libz.dylib */,
 				4F3F413417E7CA5C008B3283 /* ImageIO.framework */,
@@ -417,7 +471,6 @@
 				824A9FF317250BF300C9BD79 /* QuartzCore.framework */,
 				824A9FF517250BFA00C9BD79 /* Security.framework */,
 				824A9FF717250C0100C9BD79 /* SystemConfiguration.framework */,
-				824A9DD81724E16400C9BD79 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -448,6 +501,7 @@
 		824A9E301724E2A900C9BD79 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1B84DB1D187A356D0093D257 /* TableView Cells */,
 				1B84DAE3187A280F0093D257 /* Models */,
 				1B84DAE2187A27F00093D257 /* View Controllers */,
 				824A9E311724E2A900C9BD79 /* AppDelegate.h */,
@@ -459,6 +513,7 @@
 		824A9E421724EF9800C9BD79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B84DB1E187A359A0093D257 /* form definitions */,
 				824A9E591724F01500C9BD79 /* icons */,
 				824A9E5A1724F01D00C9BD79 /* splash */,
 				824A9E401724ECC600C9BD79 /* SalesforceSDKResources.bundle */,
@@ -689,22 +744,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B84DAEF187A29EB0093D257 /* LeadCapture Tests */ = {
+		1B03779C187A4C1300A3FC20 /* LeadCapture Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B84DAFE187A29EB0093D257 /* Build configuration list for PBXNativeTarget "LeadCapture Tests" */;
+			buildConfigurationList = 1B0377AC187A4C1300A3FC20 /* Build configuration list for PBXNativeTarget "LeadCapture Tests" */;
 			buildPhases = (
-				1B84DAEC187A29EB0093D257 /* Sources */,
-				1B84DAED187A29EB0093D257 /* Frameworks */,
-				1B84DAEE187A29EB0093D257 /* Resources */,
+				1B037799187A4C1300A3FC20 /* Sources */,
+				1B03779A187A4C1300A3FC20 /* Frameworks */,
+				1B03779B187A4C1300A3FC20 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1B84DAFD187A29EB0093D257 /* PBXTargetDependency */,
+				1B0377AB187A4C1300A3FC20 /* PBXTargetDependency */,
 			);
 			name = "LeadCapture Tests";
 			productName = "LeadCapture Tests";
-			productReference = 1B84DAF0187A29EB0093D257 /* LeadCapture Tests.xctest */;
+			productReference = 1B03779D187A4C1300A3FC20 /* LeadCapture Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		824A9DD41724E16400C9BD79 /* LeadCapture */ = {
@@ -733,7 +788,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = LightMedium;
 				TargetAttributes = {
-					1B84DAEF187A29EB0093D257 = {
+					1B03779C187A4C1300A3FC20 = {
 						TestTargetID = 824A9DD41724E16400C9BD79;
 					};
 				};
@@ -751,17 +806,17 @@
 			projectRoot = "";
 			targets = (
 				824A9DD41724E16400C9BD79 /* LeadCapture */,
-				1B84DAEF187A29EB0093D257 /* LeadCapture Tests */,
+				1B03779C187A4C1300A3FC20 /* LeadCapture Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1B84DAEE187A29EB0093D257 /* Resources */ = {
+		1B03779B187A4C1300A3FC20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B84DAF8187A29EB0093D257 /* InfoPlist.strings in Resources */,
+				1B0377A6187A4C1300A3FC20 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,7 +831,6 @@
 				824A9E411724ECC600C9BD79 /* SalesforceSDKResources.bundle in Resources */,
 				824A9E5F1724F02D00C9BD79 /* icon-72.png in Resources */,
 				824A9E601724F02D00C9BD79 /* icon-72@2x.png in Resources */,
-				1B84DAEB187A29D00093D257 /* LeadFormViewController.xib in Resources */,
 				824A9E611724F02D00C9BD79 /* icon.png in Resources */,
 				824A9E621724F02D00C9BD79 /* icon@2x.png in Resources */,
 				824A9E6A1724F03D00C9BD79 /* Default-568h@2x.png in Resources */,
@@ -786,7 +840,9 @@
 				824A9E6E1724F03D00C9BD79 /* Default-Portrait~ipad.png in Resources */,
 				824A9E6F1724F03D00C9BD79 /* Default.png in Resources */,
 				824A9E701724F03D00C9BD79 /* Default@2x.png in Resources */,
+				1B84DB1B187A34FD0093D257 /* WDCLeadFormTableViewController.xib in Resources */,
 				824A9FDF1725079100C9BD79 /* openssl_license.txt in Resources */,
+				1B84DB20187A35CB0093D257 /* WDCLeadFormTableViewControllerDef.plist in Resources */,
 				824A9FE61725079100C9BD79 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,13 +850,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1B84DAEC187A29EB0093D257 /* Sources */ = {
+		1B037799187A4C1300A3FC20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B84DAFA187A29EB0093D257 /* LeadCapture_Tests.m in Sources */,
-				1B84DB02187A2AC10093D257 /* LeadTests.m in Sources */,
-				1B84DB03187A2AC60093D257 /* Lead.m in Sources */,
+				1B0377AF187A4C3B00A3FC20 /* WDCLeadFormTableViewControllerTests.m in Sources */,
+				1B0377B0187A4C3E00A3FC20 /* LeadTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,9 +863,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B84DAEA187A29D00093D257 /* LeadFormViewController.m in Sources */,
-				1B84DAE6187A28260093D257 /* Lead.m in Sources */,
+				1B84DAE6187A28260093D257 /* WDCLead.m in Sources */,
+				1B84DB19187A34FD0093D257 /* WDCLeadFormTableViewController.m in Sources */,
 				824A9DE51724E16400C9BD79 /* main.m in Sources */,
+				1B84DB2B187A39930093D257 /* WDCConfigDrivenTableViewController.m in Sources */,
+				1B84DB33187A3DAB0093D257 /* NSMutableString+Utilities.m in Sources */,
+				1B84DB23187A387E0093D257 /* WDCTextInputCell.m in Sources */,
+				1B84DB27187A38AC0093D257 /* WDCFormSubmitCell.m in Sources */,
 				824A9E331724E2A900C9BD79 /* AppDelegate.m in Sources */,
 				824A9E361724E45100C9BD79 /* RootViewController.m in Sources */,
 				824A9E3A1724E58200C9BD79 /* InitialViewController.m in Sources */,
@@ -820,18 +879,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B84DAFD187A29EB0093D257 /* PBXTargetDependency */ = {
+		1B0377AB187A4C1300A3FC20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 824A9DD41724E16400C9BD79 /* LeadCapture */;
-			targetProxy = 1B84DAFC187A29EB0093D257 /* PBXContainerItemProxy */;
+			targetProxy = 1B0377AA187A4C1300A3FC20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1B84DAF6187A29EB0093D257 /* InfoPlist.strings */ = {
+		1B0377A4187A4C1300A3FC20 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B84DAF7187A29EB0093D257 /* en */,
+				1B0377A5187A4C1300A3FC20 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -848,18 +907,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1B84DAFF187A29EB0093D257 /* Debug */ = {
+		1B0377AD187A4C1300A3FC20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeadCapture.app/LeadCapture";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LeadCapture Tests/LeadCapture Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -870,70 +931,74 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				"HEADER_SEARCH_PATHS[arch=*]" = (
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/lib/OCMock",
+					"$(SRCROOT)/lib/**",
 				);
 				INFOPLIST_FILE = "LeadCapture Tests/LeadCapture Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies,
 					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
+					/Users/lightmedium/Sites/GoodHaggle/GoodHaggle_ios/GoodHaggle/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
 					XCTest,
-					"-ObjC",
 					"-force_load",
 					"$(SRCROOT)/lib/libOCMock.a",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		1B84DB00187A29EB0093D257 /* Release */ = {
+		1B0377AE187A4C1300A3FC20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeadCapture.app/LeadCapture";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LeadCapture Tests/LeadCapture Tests-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/lib/**",
+				);
 				INFOPLIST_FILE = "LeadCapture Tests/LeadCapture Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies,
 					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
+					/Users/lightmedium/Sites/GoodHaggle/GoodHaggle_ios/GoodHaggle/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
 					XCTest,
-					"-ObjC",
 					"-force_load",
 					"$(SRCROOT)/lib/libOCMock.a",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -943,6 +1008,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -975,6 +1041,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1000,14 +1067,18 @@
 		824A9DFC1724E16400C9BD79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LeadCapture/SupportingFiles/LeadCapture-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceOAuth/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNetworkSDK/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNativeSDK/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceSDKCore/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceCommonUtils/Headers",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/lib/**",
+					"$(SRCROOT)/LeadCapture/Dependencies/**",
 				);
 				INFOPLIST_FILE = "LeadCapture/SupportingFiles/LeadCapture-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1033,14 +1104,18 @@
 		824A9DFD1724E16400C9BD79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LeadCapture/SupportingFiles/LeadCapture-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceOAuth/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNetworkSDK/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNativeSDK/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceSDKCore/Headers",
-					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceCommonUtils/Headers",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/lib/**",
+					"$(SRCROOT)/LeadCapture/Dependencies/**",
 				);
 				INFOPLIST_FILE = "LeadCapture/SupportingFiles/LeadCapture-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1066,13 +1141,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B84DAFE187A29EB0093D257 /* Build configuration list for PBXNativeTarget "LeadCapture Tests" */ = {
+		1B0377AC187A4C1300A3FC20 /* Build configuration list for PBXNativeTarget "LeadCapture Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B84DAFF187A29EB0093D257 /* Debug */,
-				1B84DB00187A29EB0093D257 /* Release */,
+				1B0377AD187A4C1300A3FC20 /* Debug */,
+				1B0377AE187A4C1300A3FC20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		824A9DD01724E16400C9BD79 /* Build configuration list for PBXProject "LeadCapture" */ = {
 			isa = XCConfigurationList;

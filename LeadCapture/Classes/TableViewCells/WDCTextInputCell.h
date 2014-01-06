@@ -1,5 +1,5 @@
 //
-//  LeadFormViewController.h
+//  WDCTextInputCell.h
 //  LeadCapture
 //
 //  Created by C. Michael Close on 1/5/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LeadFormViewController : UIViewController
-
-@property (nonatomic, strong) Lead *lead;
+@interface WDCTextInputCell : UITableViewCell
 
 @end

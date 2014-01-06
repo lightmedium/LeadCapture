@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>sections</key>
+	<array>
+		<dict>
+			<key>fields</key>
+			<array>
+				<dict>
+					<key>label</key>
+					<string>First name:</string>
+					<key>type</key>
+					<string>textInput</string>
+					<key>boundProperty</key>
+					<string>firstName</string>
+				</dict>
+                <dict>
+					<key>label</key>
+					<string>Last name:</string>
+					<key>type</key>
+					<string>textInput</string>
+					<key>boundProperty</key>
+					<string>lastName</string>
+				</dict>
+                <dict>
+					<key>label</key>
+					<string>Company name:</string>
+					<key>type</key>
+					<string>textInput</string>
+					<key>boundProperty</key>
+					<string>companyName</string>
+				</dict>
+                <dict>
+					<key>label</key>
+					<string>Title:</string>
+					<key>type</key>
+					<string>textInput</string>
+					<key>boundProperty</key>
+					<string>title</string>
+				</dict>
+                <dict>
+					<key>label</key>
+					<string>SAVE</string>
+					<key>type</key>
+					<string>formSubmit</string>
+					<key>action</key>
+					<string>saveLead</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

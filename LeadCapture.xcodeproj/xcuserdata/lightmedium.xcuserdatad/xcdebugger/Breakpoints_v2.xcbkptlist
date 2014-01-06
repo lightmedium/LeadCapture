@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LeadCapture Tests/WDCLeadFormTableViewControllerTests.m"
+            timestampString = "410669462.218891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-testLoadFormDefinition_returnsAMutableDict"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WDCLeadFormTableViewControllerTests testLoadFormDefinition_returnsAMutableDict]"
+                  moduleName = "LeadCapture Tests"
+                  urlString = "file:///Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture%20Tests/WDCLeadFormTableViewControllerTests.m"
+                  timestampString = "410669466.352985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WDCLeadFormTableViewControllerTests testLoadFormDefinition_returnsAMutableDict]"
+                  moduleName = "LeadCapture Tests"
+                  urlString = "file:///Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture%20Tests/WDCLeadFormTableViewControllerTests.m"
+                  timestampString = "410669466.353271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "476">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
