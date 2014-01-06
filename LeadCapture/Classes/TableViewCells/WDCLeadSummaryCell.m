@@ -1,14 +1,14 @@
 //
-//  WDCFormSubmitCell.m
+//  WDCLeadSummaryCell.m
 //  LeadCapture
 //
 //  Created by C. Michael Close on 1/5/14.
 //  Copyright (c) 2014 LightMedium. All rights reserved.
 //
 
-#import "WDCFormSubmitCell.h"
+#import "WDCLeadSummaryCell.h"
 
-@implementation WDCFormSubmitCell
+@implementation WDCLeadSummaryCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

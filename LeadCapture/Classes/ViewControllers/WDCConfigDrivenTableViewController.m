@@ -7,7 +7,10 @@
 //
 
 #import "WDCConfigDrivenTableViewController.h"
+#import "WDCConfigDrivenTableViewCell.h"
 #import "NSMutableString+Utilities.h"
+#import "WDCFormSection.h"
+#import "WDCFormField.h"
 
 @interface WDCConfigDrivenTableViewController ()
 
@@ -17,12 +20,15 @@
 
 @implementation WDCConfigDrivenTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style model:(NSObject *)model;
+- (id)initWithNibName:(NSString *)nibName model:(NSObject *)model;
 {
-    self = [super initWithStyle:style];
-    if (self) {
+    if ((self = [super initWithNibName:nibName bundle:nil])) {
         _model = model;
         _formDefinition = [self loadFormDefinition];
+        if (_formDefinition != nil)
+        {
+            _dataProvider = [self hydrateDataProviderWithFormDefinition:_formDefinition];
+        }
     }
     return self;
 }
@@ -30,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    [[self tableView] setDelegate:self];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,27 +56,63 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return [[[self dataProvider] sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    WDCFormSection *s = [[[self dataProvider] sections] objectAtIndex:section];
+    return [[s fields] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    WDCFormField *field = [self fieldModelForIndexPath:indexPath];
+    NSMutableString *CellIdentifier = [[field type] mutableCopy];
     
-    // Configure the cell...
+    // construct cell class name from the field definition's type property
+    NSString *cellClassName = [NSString stringWithFormat:@"WDC%@Cell", [CellIdentifier capitalize]];
     
-    return cell;
+    // get somethign we can instantiate
+    Class CellClass = NSClassFromString(cellClassName);
+    
+    // instantiate it
+    WDCConfigDrivenTableViewCell *cell = [[CellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier model:[self model] fieldDefinition:field];
+    
+    // save it to the data provider
+    NSString *cellInstanceId = [NSString stringWithFormat:@"%@_%@", [[self model] class], [field boundProperty]];
+    [[[self dataProvider] cells] setObject:cell forKey:cellInstanceId];
+    
+    if (![cell isKindOfClass:[UITableViewCell class]])
+    {
+        NSLog(@"\n\n\nWe didn't create a UITableViewCell!!\n\n\n");
+    }
+    
+    return (UITableViewCell *)cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WDCFormField *field = [self fieldModelForIndexPath:indexPath];
+    return [[field rowHeight] floatValue];
+}
+
+
+#pragma mark - Form Data Access Helpers
+- (WDCFormSection *)sectionModelForIndexPath:(NSIndexPath *)indexPath
+{
+    return [[[self dataProvider] sections] objectAtIndex:indexPath.section];
+}
+
+- (WDCFormField *)fieldModelForIndexPath:(NSIndexPath *)indexPath
+{
+    WDCFormSection *section = [self sectionModelForIndexPath:indexPath];
+    return [[section fields] objectAtIndex:indexPath.row];
+}
+
+
+#pragma mark - Form Config Loading
 
 - (NSMutableDictionary *)loadFormDefinition;
 {
@@ -79,6 +123,12 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     NSMutableDictionary *config = [NSDictionary dictionaryWithContentsOfFile:path];
     return [config mutableCopy];
+}
+
+- (WDCFormDataProvider *)hydrateDataProviderWithFormDefinition:(NSDictionary *)formDef
+{
+    WDCFormDataProvider *dp = [WDCFormDataProvider initWithFormDefinition:formDef];
+    return dp;
 }
 
 /*

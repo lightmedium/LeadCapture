@@ -28,6 +28,10 @@
 #import "SFRestAPI.h"
 #import "SFRestRequest.h"
 
+#import "WDCLead.h"
+#import "WDCLeadSummaryCell.h"
+#import "WDCLeadFormTableViewController.h"
+
 @implementation RootViewController
 
 @synthesize dataRows;
@@ -55,7 +59,7 @@
     self.title = @"Mobile SDK Sample App";
     
     //Here we use a query that should work on either Force.com or Database.com
-    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM User LIMIT 10"];    
+    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Id, Name, FirstName, LastName, Company, Title, Email, Phone FROM Lead WHERE Status = 'Open - Not Contacted'"];
     [[SFRestAPI sharedInstance] send:request delegate:self];
 }
 
@@ -64,7 +68,7 @@
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse {
     NSArray *records = [jsonResponse objectForKey:@"records"];
     NSLog(@"request:didLoadResponse: #records: %d", records.count);
-    self.dataRows = records;
+    self.dataRows = [WDCLead initWithArray:records];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
@@ -89,6 +93,11 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -97,28 +106,32 @@
     return [self.dataRows count];
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   static NSString *CellIdentifier = @"CellIdentifier";
+   static NSString *CellIdentifier = @"WDCLeadSummaryCell";
 
    // Dequeue or create a cell of the appropriate type.
     UITableViewCell *cell = [tableView_ dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-
+        cell = [[WDCLeadSummaryCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-	//if you want to add an image to your cell, here's how
-	UIImage *image = [UIImage imageNamed:@"icon.png"];
-	cell.imageView.image = image;
-
-	// Configure the cell to show the data.
-	NSDictionary *obj = [dataRows objectAtIndex:indexPath.row];
-	cell.textLabel.text =  [obj objectForKey:@"Name"];
+    // Configure the cell to show the data.
+	WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
+	
+    cell.textLabel.text = [lead name];
+    
+    cell.detailTextLabel.text = [lead titleAndCompany];
 
 	//this adds the arrow to the right hand side.
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
 	return cell;
-
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
+    WDCLeadFormTableViewController *vc = [[WDCLeadFormTableViewController alloc] initWithNibName:@"WDCLeadFormTableViewController" model:lead];
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
 @end

@@ -8,23 +8,50 @@
 
 #import <UIKit/UIKit.h>
 #import "WDCTextInputCell.h"
+#import "WDCFormField.h"
 
 @implementation WDCTextInputCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(NSObject *)model fieldDefinition:(WDCFormField *)fieldDef;
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    // part of this inverstion of control pattern means that definition of cell style is encpasulated in each cell type.
+    if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier model:model fieldDefinition:fieldDef]))
+    {
+        _inputField = [[UITextField alloc] initWithFrame:CGRectZero];
+        [_inputField setDelegate:self];
+        [_inputField setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+        [_inputField setPlaceholder:[[self fieldDefinition] label]];
+        [_inputField setText:[[self model] valueForKey:[[self fieldDefinition] boundProperty]]];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)drawRect:(CGRect)rect
 {
-    [super setSelected:selected animated:animated];
+    [super drawRect:rect];
 
-    // Configure the view for the selected state
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    int frameWidth = [self frame].size.width;
+    int frameHeight = [self frame].size.height;
+    int inputHeight = [[[self inputField] font] lineHeight];
+    int inputWidth = frameWidth - 30;
+    int inputX = 15;
+    int inputY = (frameHeight - inputHeight + 2) / 2;
+    [[self inputField] setFrame:CGRectMake(inputX, inputY, inputWidth, inputHeight)];
+    
+    [[self contentView] addSubview:[self inputField]];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

@@ -1,37 +1,36 @@
 //
-//  WDCLead.m
+//  WDCFormField.m
 //  LeadCapture
 //
 //  Created by C. Michael Close on 1/5/14.
 //  Copyright (c) 2014 LightMedium. All rights reserved.
 //
 
-#import "WDCLead.h"
+#import "WDCFormField.h"
 #import "NSMutableString+Utilities.h"
 
-@implementation WDCLead
+@implementation WDCFormField
 
-+ (NSArray *)initWithArray:(NSArray *)rawLeads;
++ (id)initWithFieldDefinition:(NSDictionary*)dict;
 {
-    NSMutableArray *leads = [NSMutableArray array];
-    [rawLeads enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        WDCLead *lead = [WDCLead initWithDictionary:(NSDictionary *)obj];
-        [leads addObject:lead];
-    }];
-    return leads;
-}
-
-+ (WDCLead *)initWithDictionary:(NSDictionary *)rawLead;
-{
+//    WDCFormField *field = [[WDCFormField alloc] init];
+//    
+//    [field setLabel:[obj valueForKey:@"label"]];
+//    [field setType:[obj valueForKey:@"type"]];
+//    [field setBoundProperty:[obj valueForKey:@"boundProperty"]];
+//    [field setAction:[obj valueForKey:@"action"]];
+//    
+//    return field;
+    
     // for now, the properties on our Lead model can mirror the properties we receive from the
     // service.  As long as this is true, we won't have to touch this code.
     
-    // instantiate the Lead instance that we will hydrate with the dictionary
-    WDCLead *lead = [[WDCLead alloc] init];
+    // instantiate the field instance that we will hydrate with the dictionary
+    WDCFormField *field = [[WDCFormField alloc] init];
     
     // iterate over the properties in the dictionary and apply them to the lead model
     // if we can.
-    [rawLead enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         // we want to filter out NSNulls and leave their associated properties nil
         // in order to maintain peace and happiness down stream.
         if (obj == (id)[NSNull null]) return;
@@ -46,20 +45,12 @@
         SEL setter = NSSelectorFromString(setterStr);
         
         // finally, if the model responds to the setter, set it.
-        if ([lead respondsToSelector:setter])
+        if ([field respondsToSelector:setter])
         {
-            [lead performSelector:setter withObject:obj];
+            [field performSelector:setter withObject:obj];
         }
     }];
     
-    return lead;
+    return field;
 }
-
-- (NSString *)titleAndCompany;
-{
-    NSMutableString *title = [[self title] mutableCopy];
-    [title appendFormat:@", %@", [self company]];
-    return title;
-}
-
 @end
