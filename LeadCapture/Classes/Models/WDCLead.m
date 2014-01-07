@@ -124,6 +124,7 @@ static NSDictionary *prototypeObject;
         SEL getter = NSSelectorFromString(selectorString);
         if ([self respondsToSelector:getter])
         {
+            // TODO: make sure that ARC doesn't leak memory here before going into production.
             id value = [self performSelector:getter];
             if (value)
             {

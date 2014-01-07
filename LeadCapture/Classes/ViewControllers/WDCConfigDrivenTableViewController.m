@@ -18,7 +18,7 @@
 
 @implementation WDCConfigDrivenTableViewController
 
-- (id)initWithNibName:(NSString *)nibName model:(NSObject *)model;
+- (id)initWithNibName:(NSString *)nibName model:(id<WDCPersistentModelProtocol>)model;
 {
     if ((self = [super initWithNibName:nibName bundle:nil])) {
         _model = model;
