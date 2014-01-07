@@ -33,25 +33,6 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-//    [[self tableView] setDelegate:self];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -68,49 +49,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WDCFormField *field = [self fieldModelForIndexPath:indexPath];
-    NSMutableString *CellIdentifier = [[field type] mutableCopy];
-    
-    // construct cell class name from the field definition's type property
-    NSString *cellClassName = [NSString stringWithFormat:@"WDC%@Cell", [CellIdentifier capitalize]];
-    
-    // get somethign we can instantiate
-    Class CellClass = NSClassFromString(cellClassName);
-    
-    // instantiate it
-    WDCConfigDrivenTableViewCell *cell = [[CellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier model:[self model] fieldDefinition:field];
-    
-    // save it to the data provider
-    NSString *cellInstanceId = [NSString stringWithFormat:@"%@_%@", [[self model] class], [field boundProperty]];
-    [[[self dataProvider] cells] setObject:cell forKey:cellInstanceId];
-    
-    if (![cell isKindOfClass:[UITableViewCell class]])
-    {
-        NSLog(@"\n\n\nWe didn't create a UITableViewCell!!\n\n\n");
-    }
-    
-    return (UITableViewCell *)cell;
+    WDCFormField *field = [[self dataProvider] fieldModelForIndexPath:indexPath];
+    [field setModel:[self model]];
+    return [field tableViewCell];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WDCFormField *field = [self fieldModelForIndexPath:indexPath];
+    WDCFormField *field = [[self dataProvider] fieldModelForIndexPath:indexPath];
     return [[field rowHeight] floatValue];
 }
-
-
-#pragma mark - Form Data Access Helpers
-- (WDCFormSection *)sectionModelForIndexPath:(NSIndexPath *)indexPath
-{
-    return [[[self dataProvider] sections] objectAtIndex:indexPath.section];
-}
-
-- (WDCFormField *)fieldModelForIndexPath:(NSIndexPath *)indexPath
-{
-    WDCFormSection *section = [self sectionModelForIndexPath:indexPath];
-    return [[section fields] objectAtIndex:indexPath.row];
-}
-
 
 #pragma mark - Form Config Loading
 

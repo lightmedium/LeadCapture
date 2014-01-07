@@ -8,6 +8,7 @@
 
 #import "WDCFormField.h"
 #import "NSMutableString+Utilities.h"
+#import "WDCConfigDrivenTableViewCell.h"
 
 @implementation WDCFormField
 
@@ -47,10 +48,44 @@
         // finally, if the model responds to the setter, set it.
         if ([field respondsToSelector:setter])
         {
+            // we know that it's safe to suppress this memory leak warning because we are not
+            // returning anything with memory implications that arc needs to worry about.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [field performSelector:setter withObject:obj];
+#pragma clang diagnostic pop
         }
     }];
     
     return field;
+}
+
+- (UITableViewCell *)tableViewCell;
+{
+    if (_tableViewCell != nil)
+    {
+        return _tableViewCell;
+    }
+    
+    NSMutableString *CellIdentifier = [[self type] mutableCopy];
+    
+    // construct cell class name from the field definition's type property
+    NSString *cellClassName = [NSString stringWithFormat:@"WDC%@Cell", [CellIdentifier capitalize]];
+    
+    // get somethign we can instantiate
+    Class CellClass = NSClassFromString(cellClassName);
+    
+    // instantiate it
+    WDCConfigDrivenTableViewCell *cell = [[CellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier model:[self model] fieldDefinition:self];
+    
+    if (![cell isKindOfClass:[UITableViewCell class]])
+    {
+        NSLog(@"\n\n\nWe didn't create a UITableViewCell!!\n\n\n");
+    }
+    
+    [self setTableViewCell:cell];
+    
+    return (UITableViewCell *)cell;
+
 }
 @end

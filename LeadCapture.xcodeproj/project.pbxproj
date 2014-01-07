@@ -13,6 +13,14 @@
 		1B0377A6187A4C1300A3FC20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B0377A4187A4C1300A3FC20 /* InfoPlist.strings */; };
 		1B0377AF187A4C3B00A3FC20 /* WDCLeadFormTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB37187A3EAA0093D257 /* WDCLeadFormTableViewControllerTests.m */; };
 		1B0377B0187A4C3E00A3FC20 /* LeadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB01187A2AC10093D257 /* LeadTests.m */; };
+		1B2C644C187B7E30002B857F /* WDCFormDataProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C644B187B7E30002B857F /* WDCFormDataProviderTests.m */; };
+		1B2C644F187B7E9D002B857F /* WDCFixtureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C644E187B7E9D002B857F /* WDCFixtureLoader.m */; };
+		1B2C6451187B7F63002B857F /* formDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B2C6450187B7F63002B857F /* formDefinition.json */; };
+		1B2C6453187B8141002B857F /* WDCFormSectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C6452187B8141002B857F /* WDCFormSectionTests.m */; };
+		1B2C6455187B81ED002B857F /* sectionDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B2C6454187B81ED002B857F /* sectionDefinition.json */; };
+		1B2C6457187B8236002B857F /* WDCFormFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C6456187B8236002B857F /* WDCFormFieldTests.m */; };
+		1B2C6459187B8273002B857F /* fieldDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B2C6458187B8273002B857F /* fieldDefinition.json */; };
+		1B2C645B187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C645A187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m */; };
 		1B84DAE6187A28260093D257 /* WDCLead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* WDCLead.m */; };
 		1B84DB19187A34FD0093D257 /* WDCLeadFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB17187A34FD0093D257 /* WDCLeadFormTableViewController.m */; };
 		1B84DB1B187A34FD0093D257 /* WDCLeadFormTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DB18187A34FD0093D257 /* WDCLeadFormTableViewController.xib */; };
@@ -32,6 +40,9 @@
 		1BCD7061187A5AF7000F2576 /* WDCLeadSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD705F187A5AF7000F2576 /* WDCLeadSummaryCell.m */; };
 		1BCD7072187A7704000F2576 /* WDCConfigDrivenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD7071187A7704000F2576 /* WDCConfigDrivenTableViewCell.m */; };
 		1BCD7073187A7704000F2576 /* WDCConfigDrivenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD7071187A7704000F2576 /* WDCConfigDrivenTableViewCell.m */; };
+		1BCD7074187B736D000F2576 /* WDCLead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* WDCLead.m */; };
+		1BCD707A187B7840000F2576 /* lead01.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD7078187B7840000F2576 /* lead01.json */; };
+		1BCD707B187B7840000F2576 /* leadsArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD7079187B7840000F2576 /* leadsArray.json */; };
 		4F3F413517E7CA5C008B3283 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413417E7CA5C008B3283 /* ImageIO.framework */; };
 		4F3F413617E7CA71008B3283 /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F412B17E7C9CA008B3283 /* libMKNetworkKit-iOS.a */; };
 		4F3F413717E7CA84008B3283 /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413317E7C9CA008B3283 /* libSalesforceNetworkSDK.a */; };
@@ -92,6 +103,15 @@
 		1B0377A3187A4C1300A3FC20 /* LeadCapture Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeadCapture Tests-Info.plist"; sourceTree = "<group>"; };
 		1B0377A5187A4C1300A3FC20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B0377A9187A4C1300A3FC20 /* LeadCapture Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeadCapture Tests-Prefix.pch"; sourceTree = "<group>"; };
+		1B2C644B187B7E30002B857F /* WDCFormDataProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCFormDataProviderTests.m; sourceTree = "<group>"; };
+		1B2C644D187B7E9D002B857F /* WDCFixtureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCFixtureLoader.h; path = fixtures/WDCFixtureLoader.h; sourceTree = "<group>"; };
+		1B2C644E187B7E9D002B857F /* WDCFixtureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCFixtureLoader.m; path = fixtures/WDCFixtureLoader.m; sourceTree = "<group>"; };
+		1B2C6450187B7F63002B857F /* formDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = formDefinition.json; path = fixtures/formDefinition.json; sourceTree = "<group>"; };
+		1B2C6452187B8141002B857F /* WDCFormSectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCFormSectionTests.m; sourceTree = "<group>"; };
+		1B2C6454187B81ED002B857F /* sectionDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sectionDefinition.json; path = fixtures/sectionDefinition.json; sourceTree = "<group>"; };
+		1B2C6456187B8236002B857F /* WDCFormFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCFormFieldTests.m; sourceTree = "<group>"; };
+		1B2C6458187B8273002B857F /* fieldDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fieldDefinition.json; path = fixtures/fieldDefinition.json; sourceTree = "<group>"; };
+		1B2C645A187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCConfigDrivenTableViewControllerTests.m; sourceTree = "<group>"; };
 		1B84DAE4187A28260093D257 /* WDCLead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCLead.h; path = Models/WDCLead.h; sourceTree = "<group>"; };
 		1B84DAE5187A28260093D257 /* WDCLead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCLead.m; path = Models/WDCLead.m; sourceTree = "<group>"; };
 		1B84DB01187A2AC10093D257 /* LeadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeadTests.m; sourceTree = "<group>"; };
@@ -125,6 +145,8 @@
 		1BCD705F187A5AF7000F2576 /* WDCLeadSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCLeadSummaryCell.m; path = TableViewCells/WDCLeadSummaryCell.m; sourceTree = "<group>"; };
 		1BCD7070187A7704000F2576 /* WDCConfigDrivenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCConfigDrivenTableViewCell.h; path = TableViewCells/WDCConfigDrivenTableViewCell.h; sourceTree = "<group>"; };
 		1BCD7071187A7704000F2576 /* WDCConfigDrivenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCConfigDrivenTableViewCell.m; path = TableViewCells/WDCConfigDrivenTableViewCell.m; sourceTree = "<group>"; };
+		1BCD7078187B7840000F2576 /* lead01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lead01.json; path = fixtures/lead01.json; sourceTree = "<group>"; };
+		1BCD7079187B7840000F2576 /* leadsArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = leadsArray.json; path = fixtures/leadsArray.json; sourceTree = "<group>"; };
 		1BD560C2187A4A87004905C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4F3F412517E7C9CA008B3283 /* MKNetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
 		4F3F412617E7C9CA008B3283 /* MKNetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
@@ -298,9 +320,14 @@
 		1B0377A1187A4C1300A3FC20 /* LeadCapture Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1B0377A2187A4C1300A3FC20 /* Supporting Files */,
+				1BCD7077187B782C000F2576 /* fixtures */,
 				1B84DB01187A2AC10093D257 /* LeadTests.m */,
 				1B84DB37187A3EAA0093D257 /* WDCLeadFormTableViewControllerTests.m */,
-				1B0377A2187A4C1300A3FC20 /* Supporting Files */,
+				1B2C644B187B7E30002B857F /* WDCFormDataProviderTests.m */,
+				1B2C6452187B8141002B857F /* WDCFormSectionTests.m */,
+				1B2C6456187B8236002B857F /* WDCFormFieldTests.m */,
+				1B2C645A187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m */,
 			);
 			path = "LeadCapture Tests";
 			sourceTree = "<group>";
@@ -398,6 +425,20 @@
 				1BCD7050187A508C000F2576 /* OCMockRecorder.h */,
 			);
 			path = OCMock;
+			sourceTree = "<group>";
+		};
+		1BCD7077187B782C000F2576 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				1B2C644D187B7E9D002B857F /* WDCFixtureLoader.h */,
+				1B2C644E187B7E9D002B857F /* WDCFixtureLoader.m */,
+				1BCD7078187B7840000F2576 /* lead01.json */,
+				1BCD7079187B7840000F2576 /* leadsArray.json */,
+				1B2C6450187B7F63002B857F /* formDefinition.json */,
+				1B2C6454187B81ED002B857F /* sectionDefinition.json */,
+				1B2C6458187B8273002B857F /* fieldDefinition.json */,
+			);
+			name = fixtures;
 			sourceTree = "<group>";
 		};
 		4F3F412217E7C9CA008B3283 /* MKNetworkKit-iOS */ = {
@@ -842,7 +883,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B2C6451187B7F63002B857F /* formDefinition.json in Resources */,
+				1B2C6459187B8273002B857F /* fieldDefinition.json in Resources */,
+				1BCD707A187B7840000F2576 /* lead01.json in Resources */,
+				1B2C6455187B81ED002B857F /* sectionDefinition.json in Resources */,
 				1B0377A6187A4C1300A3FC20 /* InfoPlist.strings in Resources */,
+				1BCD707B187B7840000F2576 /* leadsArray.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,13 +926,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BCD7074187B736D000F2576 /* WDCLead.m in Sources */,
 				1BCD7073187A7704000F2576 /* WDCConfigDrivenTableViewCell.m in Sources */,
 				1BCD705D187A54AE000F2576 /* WDCFormField.m in Sources */,
+				1B2C644C187B7E30002B857F /* WDCFormDataProviderTests.m in Sources */,
 				1BCD7061187A5AF7000F2576 /* WDCLeadSummaryCell.m in Sources */,
+				1B2C644F187B7E9D002B857F /* WDCFixtureLoader.m in Sources */,
+				1B2C6453187B8141002B857F /* WDCFormSectionTests.m in Sources */,
 				1BCD7055187A533F000F2576 /* WDCFormDataProvider.m in Sources */,
 				1B0377AF187A4C3B00A3FC20 /* WDCLeadFormTableViewControllerTests.m in Sources */,
 				1BCD7059187A53D7000F2576 /* WDCFormSection.m in Sources */,
+				1B2C645B187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m in Sources */,
 				1B0377B0187A4C3E00A3FC20 /* LeadTests.m in Sources */,
+				1B2C6457187B8236002B857F /* WDCFormFieldTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

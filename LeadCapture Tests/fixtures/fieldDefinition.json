@@ -1,0 +1,6 @@
+{
+    "label": "First Name:",
+    "type": "textInput",
+    "boundProperty": "firstName",
+    "rowHeight": 44
+}

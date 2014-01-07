@@ -1,0 +1,16 @@
+{
+    "fields": [
+               {
+               "label": "First Name:",
+               "type": "textInput",
+               "boundProperty": "firstName",
+               "rowHeight": 44
+               },
+               {
+               "label": "Last Name:",
+               "type": "textInput",
+               "boundProperty": "lastName",
+               "rowHeight": 44
+               }
+               ]
+}

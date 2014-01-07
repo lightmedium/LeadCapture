@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadCapture Tests/WDCLeadFormTableViewControllerTests.m"
@@ -17,6 +17,36 @@
             endingLineNumber = "41"
             landmarkName = "-testLoadFormDefinition_returnsAMutableDict"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WDCLeadFormTableViewControllerTests testLoadFormDefinition_returnsAMutableDict]"
+                  moduleName = "LeadCapture Tests"
+                  urlString = "file:///Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture%20Tests/WDCLeadFormTableViewControllerTests.m"
+                  timestampString = "410745619.195607"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WDCLeadFormTableViewControllerTests testLoadFormDefinition_returnsAMutableDict]"
+                  moduleName = "LeadCapture Tests"
+                  urlString = "file:///Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture%20Tests/WDCLeadFormTableViewControllerTests.m"
+                  timestampString = "410745619.195865"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "476">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,22 +104,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
-            timestampString = "410683469.705292"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
             timestampString = "410679421.757857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -106,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadCapture/Classes/Models/WDCFormDataProvider.m"
-            timestampString = "410678973.307716"
+            timestampString = "410752163.406375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "+initWithFormDefinition:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
-            timestampString = "410679421.757857"
+            timestampString = "410749147.143072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,28 +152,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
-            timestampString = "410679421.757857"
+            timestampString = "410749147.143072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-numberOfSectionsInTableView:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
-            timestampString = "410679421.757857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
-            timestampString = "410683491.015412"
+            timestampString = "410751549.093985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
             <Locations>
@@ -254,22 +252,6 @@
             startingLineNumber = "15"
             endingLineNumber = "15"
             landmarkName = "-initWithStyle:reuseIdentifier:model:fieldDefinition:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeadCapture/Classes/ViewControllers/WDCConfigDrivenTableViewController.m"
-            timestampString = "410687908.957788"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

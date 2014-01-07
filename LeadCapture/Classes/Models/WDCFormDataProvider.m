@@ -8,6 +8,7 @@
 
 #import "WDCFormDataProvider.h"
 #import "WDCFormSection.h"
+#import "WDCFormField.h"
 
 @implementation WDCFormDataProvider
 
@@ -26,6 +27,18 @@
     }];
     [dp setSections:sections];
     return dp;
+}
+
+#pragma mark - Form Data Access Helpers
+- (WDCFormSection *)sectionModelForIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self sections] objectAtIndex:indexPath.section];
+}
+
+- (WDCFormField *)fieldModelForIndexPath:(NSIndexPath *)indexPath
+{
+    WDCFormSection *section = [self sectionModelForIndexPath:indexPath];
+    return [[section fields] objectAtIndex:indexPath.row];
 }
 
 @end

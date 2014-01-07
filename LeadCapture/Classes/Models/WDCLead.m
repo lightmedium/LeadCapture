@@ -48,7 +48,12 @@
         // finally, if the model responds to the setter, set it.
         if ([lead respondsToSelector:setter])
         {
+            // we know that it's safe to suppress this memory leak warning because we are not
+            // returning anything with memory implications that arc needs to worry about.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [lead performSelector:setter withObject:obj];
+#pragma clang diagnostic pop
         }
     }];
     

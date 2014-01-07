@@ -21,14 +21,16 @@
 // field is displaying/providing the ability to edit.
 @property (nonatomic, strong) NSString *boundProperty;
 
-// for cells that have actions, like the submit button, this
-// is the action that will be performed. It will be transformed
-// into a selector at runtime.
-@property (nonatomic, strong) NSString *action;
-
-
 // let the config define the default row height for the cell
 @property (nonatomic) NSNumber *rowHeight;
+
+// the form field is a convenient place to provide access to the domain model
+@property (nonatomic, strong) NSObject *model;
+
+// we cache the tableViewCell here.  This is not a good idea for dynamic lists,
+// but since we're rendering a form with a finite number of fields, it's OK. We
+// would need to revisit this and dequeuReusableCell if we need to present long forms.
+@property (nonatomic, strong) UITableViewCell *tableViewCell;
 
 + (id)initWithFieldDefinition:(NSDictionary*)dict;
 

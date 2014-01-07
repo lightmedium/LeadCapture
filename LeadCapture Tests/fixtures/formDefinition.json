@@ -1,0 +1,70 @@
+{
+    "sections": [
+                 {
+                 "fields": [
+                            {
+                            "label": "First Name:",
+                            "type": "textInput",
+                            "boundProperty": "firstName",
+                            "rowHeight": 44
+                            },
+                            {
+                            "label": "Last Name:",
+                            "type": "textInput",
+                            "boundProperty": "lastName",
+                            "rowHeight": 44
+                            }
+                            ]
+                 },
+                 {
+                 "fields": [
+                            {
+                            "label": "Title:",
+                            "type": "textInput",
+                            "boundProperty": "title",
+                            "rowHeight": 44
+                            },
+                            {
+                            "label": "Company:",
+                            "type": "textInput",
+                            "boundProperty": "company",
+                            "rowHeight": 44
+                            },
+                            {
+                            "label": "ThirdRow:",
+                            "type": "textInput",
+                            "boundProperty": "thirdProperty",
+                            "rowHeight": 44
+                            }
+                            ]
+                 },
+                 {
+                 "fields": [
+                            {
+                            "label": "Phone:",
+                            "type": "textInput",
+                            "boundProperty": "phone",
+                            "rowHeight": 44
+                            },
+                            {
+                            "label": "Email:",
+                            "type": "textInput",
+                            "boundProperty": "email",
+                            "rowHeight": 44
+                            },
+                            {
+                            "label": "Phone2:",
+                            "type": "textInput",
+                            "boundProperty": "phone2",
+                            "rowHeight": 44
+                            },
+                            {
+                            "label": "Email2:",
+                            "type": "textInput",
+                            "boundProperty": "email2",
+                            "rowHeight": 44
+                            }
+                            ]
+                 }
+                 ]
+}

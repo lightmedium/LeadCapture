@@ -37,6 +37,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>SFDCOAuthLoginHost</key>
+	<string>login.salesforce.com</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -54,7 +56,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>SFDCOAuthLoginHost</key>
-	<string>login.salesforce.com</string>
 </dict>
 </plist>
