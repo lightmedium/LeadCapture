@@ -6,10 +6,14 @@
 //  Copyright (c) 2014 LightMedium. All rights reserved.
 //
 
+#import "SFRestRequest.h"
+#import "SFRestAPI.h"
 #import "WDCLead.h"
 #import "NSMutableString+Utilities.h"
 
 @implementation WDCLead
+
+static NSDictionary *prototypeObject;
 
 + (NSArray *)initWithArray:(NSArray *)rawLeads;
 {
@@ -57,6 +61,9 @@
         }
     }];
     
+    // finally, save the keys of the rawLead to rehydrate the object for save
+    prototypeObject = rawLead;
+    
     return lead;
 }
 
@@ -65,6 +72,61 @@
     NSMutableString *title = [[self title] mutableCopy];
     [title appendFormat:@", %@", [self company]];
     return title;
+}
+
+- (void)save;
+{
+    // set the status
+    [self setStatus:@"Open - Not Contacted"];
+    
+    // TODO: check for id here and call update instead if it exists.
+    SFRestAPI *api = [[SFRestAPI alloc] init];
+    SFRestRequest *request = [api requestForCreateWithObjectType:@"Lead" fields:[self serializedSelf]];
+    [[SFRestAPI sharedInstance] send:request delegate:self];
+}
+
+// TODO: move to a model category? Create a model base class?
+- (NSDictionary *)serializedSelf
+{
+    NSMutableDictionary *fieldsForSave = [NSMutableDictionary dictionary];
+    
+    [prototypeObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSMutableString *mutableKey = [key mutableCopy];
+        NSString *selectorString = [mutableKey unCapitalize];
+        SEL getter = NSSelectorFromString(selectorString);
+        if ([self respondsToSelector:getter])
+        {
+            id value = [self performSelector:getter];
+            if (value)
+            {
+                [fieldsForSave setObject:value forKey:key];
+            }
+        }
+    }];
+    return fieldsForSave;
+}
+
+#pragma mark - SFRestDelegate
+    
+- (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse
+{
+    NSDictionary *dict = (NSDictionary *)jsonResponse;
+    [self setId:[dict objectForKey:@"Id"]];
+}
+
+- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error
+{
+    // handle error
+}
+
+- (void)requestDidCancelLoad:(SFRestRequest *)request
+{
+    // handle error
+}
+
+- (void)requestDidTimeout:(SFRestRequest *)request
+{
+    // handle error
 }
 
 @end

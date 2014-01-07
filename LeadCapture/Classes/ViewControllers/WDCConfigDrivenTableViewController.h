@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "WDCFormDataProvider.h"
 
-@interface WDCConfigDrivenTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+//@interface WDCConfigDrivenTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WDCConfigDrivenTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 // Designated initializer, takes an optional model object.
 - (id)initWithNibName:(NSString *)nibName model:(NSObject *)model;

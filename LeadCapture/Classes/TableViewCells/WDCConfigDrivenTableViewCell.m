@@ -32,7 +32,7 @@
     [self validateInput];
 }
 
-- (void)validateInput
+- (BOOL)validateInput;
 {
     NSError *error = nil;
     id value = [self valueForBoundProperty];
@@ -42,7 +42,9 @@
     {
         // TODO check that the setter exists.
         [[self model] setValue:value forKey:[[self fieldDefinition] boundProperty]];
+        return YES;
     }
+    return NO;
 }
 
 - (id)valueForBoundProperty;

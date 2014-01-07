@@ -41,4 +41,23 @@
     return [[section fields] objectAtIndex:indexPath.row];
 }
 
+- (BOOL)validateRequiredCells;
+{
+    BOOL __block isValid = YES;
+    [[self sections] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        WDCFormSection *section = (WDCFormSection *)obj;
+        
+        [[section fields] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            WDCFormField *field = (WDCFormField *)obj;
+            if (![field validate])
+            {
+                isValid = NO;
+                *stop = YES;
+            }
+        }];
+        if (!isValid) *stop = YES;
+    }];
+    return isValid;
+}
+
 @end

@@ -22,5 +22,6 @@
 
 - (WDCFormSection *)sectionModelForIndexPath:(NSIndexPath *)indexPath;
 - (WDCFormField *)fieldModelForIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)validateRequiredCells;
 
 @end

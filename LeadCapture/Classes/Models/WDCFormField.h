@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class WDCConfigDrivenTableViewCell;
 
 @interface WDCFormField : NSObject
 
@@ -30,8 +31,11 @@
 // we cache the tableViewCell here.  This is not a good idea for dynamic lists,
 // but since we're rendering a form with a finite number of fields, it's OK. We
 // would need to revisit this and dequeuReusableCell if we need to present long forms.
-@property (nonatomic, strong) UITableViewCell *tableViewCell;
+@property (nonatomic, strong) WDCConfigDrivenTableViewCell *tableViewCell;
 
 + (id)initWithFieldDefinition:(NSDictionary*)dict;
+
+// Run the validateInput method on the field's cell
+- (BOOL)validate;
 
 @end

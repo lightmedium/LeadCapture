@@ -29,8 +29,48 @@
         {
             _dataProvider = [self hydrateDataProviderWithFormDefinition:_formDefinition];
         }
+        
+        UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"done" style:UIBarButtonItemStyleDone target:self action:@selector(doneTouched)];
+        UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTouched)];
+        
+        // if this is an existing model, we disable the done button
+        // TODO: create a model protocol for the fiew (just this one for now)
+        //       properties that we need to access on the model.
+        if ([[self model] valueForKey:@"id"])
+        {
+            [done setEnabled:NO];
+        }
+        
+        [[self navigationItem] setLeftBarButtonItem:cancel];
+        [[self navigationItem] setRightBarButtonItem:done];
     }
     return self;
+}
+
+#pragma mark - Nav Bar Button Item Touch Handlers
+
+- (void)doneTouched
+{
+    NSLog(@"done touched");
+    // validate each cell
+    
+    if ([[self dataProvider] validateRequiredCells])
+    {
+        // if valid, save the record
+        [[self model] performSelector:@selector(save)];
+        
+        // when save is done, go back
+        [[self navigationController] popViewControllerAnimated:YES];
+    }
+    
+    // else do nothing.
+}
+
+
+- (void)cancelTouched
+{
+    NSLog(@"cancel touched");
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -51,7 +91,9 @@
 {
     WDCFormField *field = [[self dataProvider] fieldModelForIndexPath:indexPath];
     [field setModel:[self model]];
-    return [field tableViewCell];
+    WDCConfigDrivenTableViewCell *cell = [field tableViewCell];
+    [cell setTableView:[self tableView]];
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

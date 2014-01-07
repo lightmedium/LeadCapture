@@ -10,6 +10,7 @@
 #import "WDCFixtureLoader.h"
 #import "WDCFormField.h"
 #import "WDCLead.h"
+#import "WDCConfigDrivenTableViewCell.h"
 
 @interface WDCFormFieldTests : XCTestCase @end
 
@@ -54,8 +55,8 @@
     Class expectedClass = NSClassFromString(@"WDCTextInputCell");
     
     // execution
-    UITableViewCell *cell1 = [field tableViewCell];
-    UITableViewCell *cell2 = [field tableViewCell];
+    WDCConfigDrivenTableViewCell *cell1 = [field tableViewCell];
+    WDCConfigDrivenTableViewCell *cell2 = [field tableViewCell];
     
     // assertion
     XCTAssertNotNil(cell1, @"The WDCFormField failed to instantiate a UITableViewCell");

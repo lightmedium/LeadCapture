@@ -58,6 +58,20 @@
     [super viewDidLoad];
     self.title = @"Mobile SDK Sample App";
     
+    UIBarButtonItem *addNew = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStyleDone target:self action:@selector(addNewLead)];
+    
+    [[self navigationItem] setRightBarButtonItem:addNew];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self listLeads];
+}
+
+// TODO: Move to WDCLead model
+- (void)listLeads
+{
     //Here we use a query that should work on either Force.com or Database.com
     SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Id, Name, FirstName, LastName, Company, Title, Email, Phone FROM Lead WHERE Status = 'Open - Not Contacted'"];
     [[SFRestAPI sharedInstance] send:request delegate:self];
@@ -73,7 +87,6 @@
         [self.tableView reloadData];
     });
 }
-
 
 - (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error {
     NSLog(@"request:didFailLoadWithError: %@", error);
@@ -130,6 +143,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
+    WDCLeadFormTableViewController *vc = [[WDCLeadFormTableViewController alloc] initWithNibName:@"WDCLeadFormTableViewController" model:lead];
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+#pragma mark - Button Handlers
+- (void)addNewLead
+{
+    WDCLead *lead = [[WDCLead alloc] init];
     WDCLeadFormTableViewController *vc = [[WDCLeadFormTableViewController alloc] initWithNibName:@"WDCLeadFormTableViewController" model:lead];
     [[self navigationController] pushViewController:vc animated:YES];
 }

@@ -60,7 +60,7 @@
     return field;
 }
 
-- (UITableViewCell *)tableViewCell;
+- (WDCConfigDrivenTableViewCell *)tableViewCell;
 {
     if (_tableViewCell != nil)
     {
@@ -83,9 +83,15 @@
         NSLog(@"\n\n\nWe didn't create a UITableViewCell!!\n\n\n");
     }
     
+    // cache the cell in the field model
     [self setTableViewCell:cell];
     
-    return (UITableViewCell *)cell;
-
+    return cell;
 }
+
+- (BOOL)validate;
+{
+    return [[self tableViewCell] validateInput];
+}
+
 @end

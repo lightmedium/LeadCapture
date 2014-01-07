@@ -20,15 +20,6 @@
     
     [self setTitle:@"Lead Detail"];
     
-    
-    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"done" style:UIBarButtonItemStyleDone target:self action:@selector(doneTouched)];
-    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"cancel" style:UIBarButtonItemStylePlain target:self action:@selector(doneTouched)];
-    
-    [done setEnabled:NO];
-    
-    [[self navigationItem] setLeftBarButtonItem:cancel];
-    [[self navigationItem] setRightBarButtonItem:done];
-    
 //    [[self view] setFrame:CGRectMake(24, 24, [[self tableView] frame].size.width - 58, [[self tableView] frame].size.height - 24)];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -36,12 +27,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)doneTouched
-{
-    NSLog(@"done touched");
-    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

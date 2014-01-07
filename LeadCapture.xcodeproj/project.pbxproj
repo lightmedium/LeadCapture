@@ -71,9 +71,7 @@
 		824A9E701724F03D00C9BD79 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 824A9E691724F03D00C9BD79 /* Default@2x.png */; };
 		824A9FDD1725079100C9BD79 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9F321725079000C9BD79 /* libcrypto.a */; };
 		824A9FDE1725079100C9BD79 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9F331725079000C9BD79 /* libssl.a */; };
-		824A9FDF1725079100C9BD79 /* openssl_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 824A9F341725079000C9BD79 /* openssl_license.txt */; };
 		824A9FE51725079100C9BD79 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9FDB1725079100C9BD79 /* libsqlcipher.a */; };
-		824A9FE61725079100C9BD79 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 824A9FDC1725079100C9BD79 /* LICENSE */; };
 		824A9FE81725098F00C9BD79 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9FE71725098F00C9BD79 /* libxml2.dylib */; };
 		824A9FEA1725099600C9BD79 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9FE91725099600C9BD79 /* libz.dylib */; };
 		824A9FEC17250ADA00C9BD79 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A9FEB17250ADA00C9BD79 /* CFNetwork.framework */; };
@@ -194,9 +192,7 @@
 		824A9E691724F03D00C9BD79 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		824A9F321725079000C9BD79 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		824A9F331725079000C9BD79 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		824A9F341725079000C9BD79 /* openssl_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = openssl_license.txt; sourceTree = "<group>"; };
 		824A9FDB1725079100C9BD79 /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsqlcipher.a; sourceTree = "<group>"; };
-		824A9FDC1725079100C9BD79 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		824A9FE71725098F00C9BD79 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		824A9FE91725099600C9BD79 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		824A9FEB17250ADA00C9BD79 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -636,7 +632,6 @@
 			children = (
 				824A9F321725079000C9BD79 /* libcrypto.a */,
 				824A9F331725079000C9BD79 /* libssl.a */,
-				824A9F341725079000C9BD79 /* openssl_license.txt */,
 			);
 			path = openssl;
 			sourceTree = "<group>";
@@ -645,7 +640,6 @@
 			isa = PBXGroup;
 			children = (
 				824A9FDB1725079100C9BD79 /* libsqlcipher.a */,
-				824A9FDC1725079100C9BD79 /* LICENSE */,
 			);
 			path = sqlcipher;
 			sourceTree = "<group>";
@@ -916,9 +910,7 @@
 				824A9E6F1724F03D00C9BD79 /* Default.png in Resources */,
 				824A9E701724F03D00C9BD79 /* Default@2x.png in Resources */,
 				1B84DB1B187A34FD0093D257 /* WDCLeadFormTableViewController.xib in Resources */,
-				824A9FDF1725079100C9BD79 /* openssl_license.txt in Resources */,
 				1B84DB20187A35CB0093D257 /* WDCLeadFormTableViewControllerDef.plist in Resources */,
-				824A9FE61725079100C9BD79 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,6 +1025,14 @@
 					"$(inherited)",
 					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
 					/Users/lightmedium/Sites/GoodHaggle/GoodHaggle_ios/GoodHaggle/lib,
+					"/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/MKNetworkKit-iOS",
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/openssl,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceCommonUtils,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNativeSDK,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNetworkSDK,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceOAuth,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceSDKCore,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/sqlcipher,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1080,6 +1080,14 @@
 					"$(inherited)",
 					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
 					/Users/lightmedium/Sites/GoodHaggle/GoodHaggle_ios/GoodHaggle/lib,
+					"/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/MKNetworkKit-iOS",
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/openssl,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceCommonUtils,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNativeSDK,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNetworkSDK,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceOAuth,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceSDKCore,
+					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/sqlcipher,
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
