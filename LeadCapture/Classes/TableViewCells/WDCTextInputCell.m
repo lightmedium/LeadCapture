@@ -14,34 +14,35 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(NSObject *)model fieldDefinition:(WDCFormField *)fieldDef;
 {
-    // part of this inverstion of control pattern means that definition of cell style is encpasulated in each cell type.
+    // cells are responsible for encapsulating their layout, style, and mapping of data
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier model:model fieldDefinition:fieldDef]))
     {
         _inputField = [[UITextField alloc] initWithFrame:CGRectZero];
+        [[self contentView] addSubview:_inputField];
+        
         [_inputField setDelegate:self];
         [_inputField setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
         [_inputField setPlaceholder:[[self fieldDefinition] label]];
         [_inputField setText:[[self model] valueForKey:[[self fieldDefinition] boundProperty]]];
+        
+        // we don't want to be able to select the form cells themselves.
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return self;
 }
 
+// required by subclasses of WDCConfigDrivenTableViewCell, concrete implementations
+// know best how data should be extracted from the UI.
 - (id)valueForBoundProperty;
 {
     return [[self inputField] text];
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
-
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
+    // position the input field.
     int frameWidth = [self frame].size.width;
     int frameHeight = [self frame].size.height;
     int inputHeight = [[[self inputField] font] lineHeight];
@@ -49,8 +50,20 @@
     int inputX = 15;
     int inputY = (frameHeight - inputHeight + 2) / 2;
     [[self inputField] setFrame:CGRectMake(inputX, inputY, inputWidth, inputHeight)];
-    
-    [[self contentView] addSubview:[self inputField]];
+}
+
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    // we validate cells
+    [self validateInput];
 }
 
 @end

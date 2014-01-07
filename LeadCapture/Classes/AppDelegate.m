@@ -23,7 +23,7 @@
  */
 
 #import "AppDelegate.h"
-#import "InitialViewController.h"
+#import "WDCSplashViewController.h"
 #import "RootViewController.h"
 #import "SFAccountManager.h"
 #import "SFAuthenticationManager.h"
@@ -157,7 +157,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 
 - (void)initializeAppViewState
 {
-    self.window.rootViewController = [[InitialViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = [[WDCSplashViewController alloc] initWithNibName:nil bundle:nil];
     [self.window makeKeyAndVisible];
 }
 

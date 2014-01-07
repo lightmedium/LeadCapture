@@ -11,6 +11,7 @@
 
 @implementation WDCFormSection
 
+// traverse fields in the section, initializing WDCFormField models
 + (id)initWithSectionDefinition:(NSDictionary *)sectionDef;
 {
     WDCFormSection *section = [[WDCFormSection alloc] init];

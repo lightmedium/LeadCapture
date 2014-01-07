@@ -29,7 +29,6 @@
 #import "SFRestRequest.h"
 
 #import "WDCLead.h"
-#import "WDCLeadSummaryCell.h"
 #import "WDCLeadFormTableViewController.h"
 
 @implementation RootViewController
@@ -56,11 +55,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Mobile SDK Sample App";
+    self.title = @"Your Leads";
     
+    // add the [+] button to the navbar for creating a new lead
     UIBarButtonItem *addNew = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStyleDone target:self action:@selector(addNewLead)];
-    
     [[self navigationItem] setRightBarButtonItem:addNew];
+    
+    // don't want cell selection hanging around
+    self.clearsSelectionOnViewWillAppear = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,7 +74,7 @@
 // TODO: Move to WDCLead model
 - (void)listLeads
 {
-    //Here we use a query that should work on either Force.com or Database.com
+    // load our leads from the SFRestAPI
     SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Id, Name, FirstName, LastName, Company, Title, Email, Phone FROM Lead WHERE Status = 'Open - Not Contacted'"];
     [[SFRestAPI sharedInstance] send:request delegate:self];
 }
@@ -80,8 +82,8 @@
 #pragma mark - SFRestAPIDelegate
 
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse {
+    // we have leads, let's serialize them in to WDCLead instances
     NSArray *records = [jsonResponse objectForKey:@"records"];
-    NSLog(@"request:didLoadResponse: #records: %d", records.count);
     self.dataRows = [WDCLead initWithArray:records];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
@@ -122,19 +124,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    static NSString *CellIdentifier = @"WDCLeadSummaryCell";
 
-   // Dequeue or create a cell of the appropriate type.
+    // Dequeue or create a cell of the appropriate type.
     UITableViewCell *cell = [tableView_ dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[WDCLeadSummaryCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    // Configure the cell to show the data.
-	WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
-	
-    cell.textLabel.text = [lead name];
     
+    // Configure the cell to show the data in the WDCLead instance.
+	WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
+    cell.textLabel.text = [lead name];
     cell.detailTextLabel.text = [lead titleAndCompany];
-
-	//this adds the arrow to the right hand side.
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
 	return cell;
@@ -142,6 +141,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // grab the lead object (domain model) for the index path
+    // instantiate the form view controller with the lead object
+    // push the form view controller onto the navigationController
     WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
     WDCLeadFormTableViewController *vc = [[WDCLeadFormTableViewController alloc] initWithNibName:@"WDCLeadFormTableViewController" model:lead];
     [[self navigationController] pushViewController:vc animated:YES];
@@ -150,6 +152,9 @@
 #pragma mark - Button Handlers
 - (void)addNewLead
 {
+    // instantiate an empty WDCLead object to hand off to the form
+    // instantiate the form view controller with the lead object
+    // push the form view controller onto the navigationController
     WDCLead *lead = [[WDCLead alloc] init];
     WDCLeadFormTableViewController *vc = [[WDCLeadFormTableViewController alloc] initWithNibName:@"WDCLeadFormTableViewController" model:lead];
     [[self navigationController] pushViewController:vc animated:YES];

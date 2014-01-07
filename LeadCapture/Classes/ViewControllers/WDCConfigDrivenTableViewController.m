@@ -14,8 +14,6 @@
 
 @interface WDCConfigDrivenTableViewController ()
 
-- (NSMutableDictionary *)loadFormDefinition;
-
 @end
 
 @implementation WDCConfigDrivenTableViewController
@@ -27,7 +25,8 @@
         _formDefinition = [self loadFormDefinition];
         if (_formDefinition != nil)
         {
-            _dataProvider = [self hydrateDataProviderWithFormDefinition:_formDefinition];
+            // construct the data provider with the form definition loaded from the plist
+            _dataProvider = [WDCFormDataProvider initWithFormDefinition:_formDefinition];
         }
         
         UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"done" style:UIBarButtonItemStyleDone target:self action:@selector(doneTouched)];
@@ -66,7 +65,6 @@
     // else do nothing.
 }
 
-
 - (void)cancelTouched
 {
     NSLog(@"cancel touched");
@@ -77,27 +75,35 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
+    // return the number of sections in the data provider.
     return [[[self dataProvider] sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    // return the number of fields in the section of the data provider
     WDCFormSection *s = [[[self dataProvider] sections] objectAtIndex:section];
     return [[s fields] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // grab the field model
     WDCFormField *field = [[self dataProvider] fieldModelForIndexPath:indexPath];
+    
+    // set a reference to the domain model (the WDCLead instance) on the field model
     [field setModel:[self model]];
+    
+    // everything we need to know about instantiating the cell is encapsulated in the field model.
+    // the field model caches its own cell instance.
     WDCConfigDrivenTableViewCell *cell = [field tableViewCell];
-    [cell setTableView:[self tableView]];
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // height is a property loaded from the field definition in the plist
     WDCFormField *field = [[self dataProvider] fieldModelForIndexPath:indexPath];
     return [[field rowHeight] floatValue];
 }
@@ -107,69 +113,16 @@
 - (NSMutableDictionary *)loadFormDefinition;
 {
     // infer the name of the plist from the client view controller class name
+    // this way, implementations of concrete view controllers don't need to
+    // worry about loading their controller-specific plist. As long as the plist
+    // is named "class name" + "Def" the view controller will be configured with it.
     NSMutableString *plistName = [NSStringFromClass([self class]) mutableCopy];
     [plistName appendString:@"Def"];
     
+    // load the plist with the name we just assembled
     NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     NSMutableDictionary *config = [NSDictionary dictionaryWithContentsOfFile:path];
     return [config mutableCopy];
 }
-
-- (WDCFormDataProvider *)hydrateDataProviderWithFormDefinition:(NSDictionary *)formDef
-{
-    WDCFormDataProvider *dp = [WDCFormDataProvider initWithFormDefinition:formDef];
-    return dp;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

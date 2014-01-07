@@ -12,10 +12,11 @@
 
 @implementation WDCFormDataProvider
 
+// crawl over the form definition dictionary and serialize data into
+// a WDCFormDataProvider and its models
 + (id)initWithFormDefinition:(NSDictionary *)formDef;
 {
     WDCFormDataProvider *dp = [[WDCFormDataProvider alloc] init];
-    [dp setCells:[NSMutableDictionary dictionary]];
     
     NSArray *rawSections = [formDef valueForKey:@"sections"];
     
@@ -44,6 +45,8 @@
 - (BOOL)validateRequiredCells;
 {
     BOOL __block isValid = YES;
+    
+    // traverse the sections and fields. as soon as we find one that is invalid, stop and return NO.
     [[self sections] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         WDCFormSection *section = (WDCFormSection *)obj;
         

@@ -14,17 +14,8 @@
 
 + (id)initWithFieldDefinition:(NSDictionary*)dict;
 {
-//    WDCFormField *field = [[WDCFormField alloc] init];
-//    
-//    [field setLabel:[obj valueForKey:@"label"]];
-//    [field setType:[obj valueForKey:@"type"]];
-//    [field setBoundProperty:[obj valueForKey:@"boundProperty"]];
-//    [field setAction:[obj valueForKey:@"action"]];
-//    
-//    return field;
-    
-    // for now, the properties on our Lead model can mirror the properties we receive from the
-    // service.  As long as this is true, we won't have to touch this code.
+    // as long as the properties on our Lead model mirror the properties we receive from the
+    // service, we won't have to touch this code as we add/remove mappings from the service.
     
     // instantiate the field instance that we will hydrate with the dictionary
     WDCFormField *field = [[WDCFormField alloc] init];
@@ -60,6 +51,7 @@
     return field;
 }
 
+// We're caching the WDCConfigDrivenTableViewCell used to present this form field
 - (WDCConfigDrivenTableViewCell *)tableViewCell;
 {
     if (_tableViewCell != nil)
@@ -67,6 +59,7 @@
         return _tableViewCell;
     }
     
+    // we didn't have a cell yet, let's create one based on the field config data
     NSMutableString *CellIdentifier = [[self type] mutableCopy];
     
     // construct cell class name from the field definition's type property
@@ -80,7 +73,8 @@
     
     if (![cell isKindOfClass:[UITableViewCell class]])
     {
-        NSLog(@"\n\n\nWe didn't create a UITableViewCell!!\n\n\n");
+        // Helper log for when the config is incorrect.
+        NSLog(@"\n\n\nWe didn't create a UITableViewCell!!\nWe created a %@\n\n\n", [cell class]);
     }
     
     // cache the cell in the field model
@@ -89,6 +83,7 @@
     return cell;
 }
 
+// bucket-brigade calls to validate the cell's value
 - (BOOL)validate;
 {
     return [[self tableViewCell] validateInput];

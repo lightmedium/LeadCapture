@@ -15,6 +15,7 @@
 
 static NSDictionary *prototypeObject;
 
+// class method for serializeing a list of leads from the servie
 + (NSArray *)initWithArray:(NSArray *)rawLeads;
 {
     NSMutableArray *leads = [NSMutableArray array];
@@ -25,6 +26,7 @@ static NSDictionary *prototypeObject;
     return leads;
 }
 
+// class method for serializing a single lead from the service
 + (WDCLead *)initWithDictionary:(NSDictionary *)rawLead;
 {
     // for now, the properties on our Lead model can mirror the properties we receive from the
@@ -67,6 +69,8 @@ static NSDictionary *prototypeObject;
     return lead;
 }
 
+// convenience method for retrieving the title and company
+// concatenated, ex. "CEO, Widgets Inc"
 - (NSString *)titleAndCompany;
 {
     NSMutableString *title = [[self title] mutableCopy];
@@ -74,6 +78,7 @@ static NSDictionary *prototypeObject;
     return title;
 }
 
+// persist the instance to the service
 - (void)save;
 {
     // set the status
@@ -85,7 +90,7 @@ static NSDictionary *prototypeObject;
     [[SFRestAPI sharedInstance] send:request delegate:self];
 }
 
-// TODO: move to a model category? Create a model base class?
+// hydrate a dictionary to send to the service, containing the instances property values.
 - (NSDictionary *)serializedSelf
 {
     NSMutableDictionary *fieldsForSave = [NSMutableDictionary dictionary];
@@ -112,11 +117,16 @@ static NSDictionary *prototypeObject;
 {
     NSDictionary *dict = (NSDictionary *)jsonResponse;
     [self setId:[dict objectForKey:@"Id"]];
+    // TODO: notify the client controller that the save completed by
+    //       refactoring the save method to accept a block.  Is there an
+    //       api in SFRestAPI that uses blocks?
 }
 
 - (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error
 {
-    // handle error
+    // TODO: notify the client controller that the save failed by
+    //       refactoring the save method to accept a block.  Is there an
+    //       api in SFRestAPI that uses blocks?
 }
 
 - (void)requestDidCancelLoad:(SFRestRequest *)request
@@ -126,7 +136,9 @@ static NSDictionary *prototypeObject;
 
 - (void)requestDidTimeout:(SFRestRequest *)request
 {
-    // handle error
+    // TODO: notify the client controller that the save failed by
+    //       refactoring the save method to accept a block.  Is there an
+    //       api in SFRestAPI that uses blocks?
 }
 
 @end

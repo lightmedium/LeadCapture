@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class WDCFormField;
 
-@interface WDCConfigDrivenTableViewCell : UITableViewCell <UITextFieldDelegate>
+@interface WDCConfigDrivenTableViewCell : UITableViewCell
 
 // each cell is given a domain model and a field configuration.
 // this is the domain model.
@@ -17,10 +17,6 @@
 
 // this is the configuration model.
 @property (nonatomic, strong) WDCFormField *fieldDefinition;
-
-// a weak reference to the tableView that this cell belongs to.
-// people cringe at this, I don't see why. It's simple IOC.
-@property (nonatomic, weak) UITableView *tableView;
 
 // designated initializer. Most cells end up needing to be
 // subclassed, or else put up with a lot of noise in your

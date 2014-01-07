@@ -21,20 +21,12 @@
     return self;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [self validateInput];
-}
-
+// abstract method for validating bound property of cell
 - (BOOL)validateInput;
 {
     NSError *error = nil;
+    
+    // valueForBoundProperty implemented in concrete subclasses
     id value = [self valueForBoundProperty];
     BOOL fieldIsValid = [[self model] validateValue:&value forKey:[[self fieldDefinition] boundProperty] error:&error];
     
