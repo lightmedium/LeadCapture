@@ -72,17 +72,4 @@
     XCTAssertEqual(expectedNumberOfRowIn3, actualNumberOfRowIn3, @"The view controller doesn't know how many rows are in section 3 of the data provider.");
 }
 
-- (void)testCellForRowAtIndexPath_instantiatesCorrectCellType
-{
-    // setup
-    WDCFormSection *section = [[[self dataProvider] sections] objectAtIndex:1];
-    WDCFormField *field = [[section fields] objectAtIndex:1];
-    
-    // execution
-    id cell = [[self controller] tableView:[[self controller] tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    
-    // assertion
-    
-}
-
 @end

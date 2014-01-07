@@ -27,6 +27,11 @@
     return self;
 }
 
+- (id)valueForBoundProperty;
+{
+    return [[self inputField] text];
+}
+
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
@@ -46,12 +51,6 @@
     [[self inputField] setFrame:CGRectMake(inputX, inputY, inputWidth, inputHeight)];
     
     [[self contentView] addSubview:[self inputField]];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
 }
 
 @end

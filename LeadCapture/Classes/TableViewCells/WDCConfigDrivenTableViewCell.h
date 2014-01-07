@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class WDCFormField;
 
-@interface WDCConfigDrivenTableViewCell : UITableViewCell
+@interface WDCConfigDrivenTableViewCell : UITableViewCell <UITextFieldDelegate>
 
 // each cell is given a domain model and a field configuration.
 // this is the domain model.
@@ -22,5 +22,10 @@
 // subclassed, or else put up with a lot of noise in your
 // tableView:cellForRowAtIndexPath: method
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(NSObject *)model fieldDefinition:(WDCFormField *)fieldDef;
+
+
+// This method must be implemented in the subclass.  It should return the value
+// that the cell is collecting for persistence to the model.
+- (id)valueForBoundProperty;
 
 @end

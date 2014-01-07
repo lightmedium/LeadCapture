@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WDCConfigDrivenTableViewCell.h"
 
-@interface WDCTextInputCell : WDCConfigDrivenTableViewCell <UITextFieldDelegate>
+@interface WDCTextInputCell : WDCConfigDrivenTableViewCell
 
 // for editing the field
 @property (nonatomic, strong) UITextField *inputField;

@@ -21,6 +21,7 @@
 		1B2C6457187B8236002B857F /* WDCFormFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C6456187B8236002B857F /* WDCFormFieldTests.m */; };
 		1B2C6459187B8273002B857F /* fieldDefinition.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B2C6458187B8273002B857F /* fieldDefinition.json */; };
 		1B2C645B187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C645A187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m */; };
+		1B2C645D187B98AA002B857F /* WDCConfigDrivenTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C645C187B98AA002B857F /* WDCConfigDrivenTableViewCellTests.m */; };
 		1B84DAE6187A28260093D257 /* WDCLead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* WDCLead.m */; };
 		1B84DB19187A34FD0093D257 /* WDCLeadFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DB17187A34FD0093D257 /* WDCLeadFormTableViewController.m */; };
 		1B84DB1B187A34FD0093D257 /* WDCLeadFormTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B84DB18187A34FD0093D257 /* WDCLeadFormTableViewController.xib */; };
@@ -112,6 +113,7 @@
 		1B2C6456187B8236002B857F /* WDCFormFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCFormFieldTests.m; sourceTree = "<group>"; };
 		1B2C6458187B8273002B857F /* fieldDefinition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fieldDefinition.json; path = fixtures/fieldDefinition.json; sourceTree = "<group>"; };
 		1B2C645A187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCConfigDrivenTableViewControllerTests.m; sourceTree = "<group>"; };
+		1B2C645C187B98AA002B857F /* WDCConfigDrivenTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCConfigDrivenTableViewCellTests.m; sourceTree = "<group>"; };
 		1B84DAE4187A28260093D257 /* WDCLead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCLead.h; path = Models/WDCLead.h; sourceTree = "<group>"; };
 		1B84DAE5187A28260093D257 /* WDCLead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCLead.m; path = Models/WDCLead.m; sourceTree = "<group>"; };
 		1B84DB01187A2AC10093D257 /* LeadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeadTests.m; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				1B2C6452187B8141002B857F /* WDCFormSectionTests.m */,
 				1B2C6456187B8236002B857F /* WDCFormFieldTests.m */,
 				1B2C645A187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m */,
+				1B2C645C187B98AA002B857F /* WDCConfigDrivenTableViewCellTests.m */,
 			);
 			path = "LeadCapture Tests";
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				1BCD7059187A53D7000F2576 /* WDCFormSection.m in Sources */,
 				1B2C645B187B853E002B857F /* WDCConfigDrivenTableViewControllerTests.m in Sources */,
 				1B0377B0187A4C3E00A3FC20 /* LeadTests.m in Sources */,
+				1B2C645D187B98AA002B857F /* WDCConfigDrivenTableViewCellTests.m in Sources */,
 				1B2C6457187B8236002B857F /* WDCFormFieldTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
