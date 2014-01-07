@@ -28,8 +28,7 @@
 #import "WDCLead.h"
 #import "WDCLeadFormTableViewController.h"
 #import "WDCSalesForceDAO.h"
-//#import "SFRestAPI.h"
-//#import "SFRestRequest.h"
+#import "MBProgressHUD.h"
 
 @implementation RootViewController
 
@@ -67,24 +66,27 @@
 {
     [super viewWillAppear:animated];
     
+    // show the spinner
+    MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self view] animated:YES];
+    [spinner setColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.92f]];
+    [spinner setCornerRadius:0.0f];
+    [spinner setLabelText:@"Loading Leads"];
+    [spinner dimBackground];
+    [spinner setYOffset:-20.0f];
+    [spinner setMargin:8.0f];
+    [spinner show:YES];
+    
     __weak RootViewController *weakSelf = self;
     [WDCLead listLeads:^(BOOL success, id response, NSError *error) {
         NSArray *records = [response objectForKey:@"records"];
         [weakSelf setDataRows:[WDCLead initWithArray:records]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [[weakSelf tableView] reloadData];
+            
+            // hide the spinner
+            [MBProgressHUD hideAllHUDsForView:[weakSelf view] animated:YES];
         });
     }];
-    
-//    __weak RootViewController *weakSelf = self;
-//    WDCLead *lead = [[WDCLead alloc] init];
-//    [lead listLeads:^(BOOL success, id response, NSError *error) {
-//        NSArray *records = [response objectForKey:@"records"];
-//        [weakSelf setDataRows:[WDCLead initWithArray:records]];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [[weakSelf tableView] reloadData];
-//        });
-//    }];
 }
 
 

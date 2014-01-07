@@ -33,6 +33,8 @@
 		1B9D57FB187BDA51007833FC /* WDCSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9D57F9187BDA51007833FC /* WDCSplashViewController.m */; };
 		1B9D57FC187BDA51007833FC /* WDCSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9D57FA187BDA51007833FC /* WDCSplashViewController.xib */; };
 		1B9D5800187C5B88007833FC /* WDCSalesForceDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9D57FF187C5B88007833FC /* WDCSalesForceDAO.m */; };
+		1BCD675C187C9C7A006425F2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD6759187C9C7A006425F2 /* LICENSE */; };
+		1BCD675D187C9C7A006425F2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD675B187C9C7A006425F2 /* MBProgressHUD.m */; };
 		1BCD7049187A5056000F2576 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCD7048187A5056000F2576 /* libOCMock.a */; };
 		1BCD7054187A533F000F2576 /* WDCFormDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD7053187A533F000F2576 /* WDCFormDataProvider.m */; };
 		1BCD7055187A533F000F2576 /* WDCFormDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD7053187A533F000F2576 /* WDCFormDataProvider.m */; };
@@ -132,6 +134,9 @@
 		1B9D57FA187BDA51007833FC /* WDCSplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDCSplashViewController.xib; path = ViewControllers/WDCSplashViewController.xib; sourceTree = "<group>"; };
 		1B9D57FE187C5B88007833FC /* WDCSalesForceDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCSalesForceDAO.h; path = Services/WDCSalesForceDAO.h; sourceTree = "<group>"; };
 		1B9D57FF187C5B88007833FC /* WDCSalesForceDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDCSalesForceDAO.m; path = Services/WDCSalesForceDAO.m; sourceTree = "<group>"; };
+		1BCD6759187C9C7A006425F2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = lib/MBProgressHUD/LICENSE; sourceTree = "<group>"; };
+		1BCD675A187C9C7A006425F2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = lib/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		1BCD675B187C9C7A006425F2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = lib/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		1BCD7048187A5056000F2576 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../../GoodHaggle/GoodHaggle_ios/GoodHaggle/lib/libOCMock.a; sourceTree = "<group>"; };
 		1BCD704B187A508C000F2576 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "../lib/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		1BCD704C187A508C000F2576 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = ../lib/OCMock/OCMArg.h; sourceTree = "<group>"; };
@@ -395,6 +400,7 @@
 		1B84DB2D187A3D6B0093D257 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				1BCD6758187C9C62006425F2 /* MBProgressHUD */,
 				1BCD704A187A508C000F2576 /* OCMock */,
 				1B84DB2E187A3DAB0093D257 /* LMUtilities Tests */,
 				1B84DB30187A3DAB0093D257 /* NSMutableString+Utilities.h */,
@@ -418,6 +424,16 @@
 				1B9D57FF187C5B88007833FC /* WDCSalesForceDAO.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		1BCD6758187C9C62006425F2 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1BCD6759187C9C7A006425F2 /* LICENSE */,
+				1BCD675A187C9C7A006425F2 /* MBProgressHUD.h */,
+				1BCD675B187C9C7A006425F2 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		1BCD704A187A508C000F2576 /* OCMock */ = {
@@ -921,6 +937,7 @@
 				824A9E6A1724F03D00C9BD79 /* Default-568h@2x.png in Resources */,
 				824A9E6B1724F03D00C9BD79 /* Default-Landscape@2x~ipad.png in Resources */,
 				824A9E6C1724F03D00C9BD79 /* Default-Landscape~ipad.png in Resources */,
+				1BCD675C187C9C7A006425F2 /* LICENSE in Resources */,
 				824A9E6D1724F03D00C9BD79 /* Default-Portrait@2x~ipad.png in Resources */,
 				824A9E6E1724F03D00C9BD79 /* Default-Portrait~ipad.png in Resources */,
 				824A9E6F1724F03D00C9BD79 /* Default.png in Resources */,
@@ -965,6 +982,7 @@
 				1B9D5800187C5B88007833FC /* WDCSalesForceDAO.m in Sources */,
 				1B84DB2B187A39930093D257 /* WDCConfigDrivenTableViewController.m in Sources */,
 				1B84DB33187A3DAB0093D257 /* NSMutableString+Utilities.m in Sources */,
+				1BCD675D187C9C7A006425F2 /* MBProgressHUD.m in Sources */,
 				1BCD7072187A7704000F2576 /* WDCConfigDrivenTableViewCell.m in Sources */,
 				1B84DB23187A387E0093D257 /* WDCTextInputCell.m in Sources */,
 				824A9E331724E2A900C9BD79 /* AppDelegate.m in Sources */,
