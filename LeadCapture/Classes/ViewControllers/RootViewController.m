@@ -25,15 +25,13 @@
 
 #import "RootViewController.h"
 
-#import "SFRestAPI.h"
-#import "SFRestRequest.h"
-
 #import "WDCLead.h"
 #import "WDCLeadFormTableViewController.h"
+#import "WDCSalesForceDAO.h"
+//#import "SFRestAPI.h"
+//#import "SFRestRequest.h"
 
 @implementation RootViewController
-
-@synthesize dataRows;
 
 #pragma mark Misc
 
@@ -68,41 +66,25 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self listLeads];
-}
-
-// TODO: Move to WDCLead model
-- (void)listLeads
-{
-    // load our leads from the SFRestAPI
-    SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Id, Name, FirstName, LastName, Company, Title, Email, Phone FROM Lead WHERE Status = 'Open - Not Contacted'"];
-    [[SFRestAPI sharedInstance] send:request delegate:self];
-}
-
-#pragma mark - SFRestAPIDelegate
-
-- (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse {
-    // we have leads, let's serialize them in to WDCLead instances
-    NSArray *records = [jsonResponse objectForKey:@"records"];
-    self.dataRows = [WDCLead initWithArray:records];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
-}
-
-- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error {
-    NSLog(@"request:didFailLoadWithError: %@", error);
-    //add your failed error handling here
-}
-
-- (void)requestDidCancelLoad:(SFRestRequest *)request {
-    NSLog(@"requestDidCancelLoad: %@", request);
-    //add your failed error handling here
-}
-
-- (void)requestDidTimeout:(SFRestRequest *)request {
-    NSLog(@"requestDidTimeout: %@", request);
-    //add your failed error handling here
+    
+    __weak RootViewController *weakSelf = self;
+    [WDCLead listLeads:^(BOOL success, id response, NSError *error) {
+        NSArray *records = [response objectForKey:@"records"];
+        [weakSelf setDataRows:[WDCLead initWithArray:records]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[weakSelf tableView] reloadData];
+        });
+    }];
+    
+//    __weak RootViewController *weakSelf = self;
+//    WDCLead *lead = [[WDCLead alloc] init];
+//    [lead listLeads:^(BOOL success, id response, NSError *error) {
+//        NSArray *records = [response objectForKey:@"records"];
+//        [weakSelf setDataRows:[WDCLead initWithArray:records]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[weakSelf tableView] reloadData];
+//        });
+//    }];
 }
 
 
@@ -131,7 +113,7 @@
     }
     
     // Configure the cell to show the data in the WDCLead instance.
-	WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
+	WDCLead *lead = [[self dataRows] objectAtIndex:indexPath.row];
     cell.textLabel.text = [lead name];
     cell.detailTextLabel.text = [lead titleAndCompany];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -144,7 +126,7 @@
     // grab the lead object (domain model) for the index path
     // instantiate the form view controller with the lead object
     // push the form view controller onto the navigationController
-    WDCLead *lead = [dataRows objectAtIndex:indexPath.row];
+    WDCLead *lead = [[self dataRows] objectAtIndex:indexPath.row];
     WDCLeadFormTableViewController *vc = [[WDCLeadFormTableViewController alloc] initWithNibName:@"WDCLeadFormTableViewController" model:lead];
     [[self navigationController] pushViewController:vc animated:YES];
 }

@@ -35,7 +35,7 @@
         // if this is an existing model, we disable the done button
         // TODO: create a model protocol for the fiew (just this one for now)
         //       properties that we need to access on the model.
-        if ([[self model] valueForKey:@"id"])
+        if (![[self model] isNew])
         {
             [done setEnabled:NO];
         }
@@ -56,10 +56,17 @@
     if ([[self dataProvider] validateRequiredCells])
     {
         // if valid, save the record
-        [[self model] performSelector:@selector(save)];
-        
-        // when save is done, go back
-        [[self navigationController] popViewControllerAnimated:YES];
+        [[self model] save:^(BOOL success, id response, NSError *error) {
+            if (success)
+            {
+                // when save is done, go back
+                [[self navigationController] popViewControllerAnimated:YES];
+            }
+            else
+            {
+                // alert the user
+            }
+        }];
     }
     
     // else do nothing.

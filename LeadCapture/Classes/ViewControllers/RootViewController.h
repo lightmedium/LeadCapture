@@ -23,13 +23,11 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "SFRestAPI.h"
+//#import "SFRestAPI.h"
 
-@interface RootViewController : UITableViewController <SFRestDelegate> {
-    
-    NSMutableArray *dataRows;
-    IBOutlet UITableView *tableView;    
-
+@interface RootViewController : UITableViewController
+{
+    IBOutlet UITableView *tableView;
 }
 
 @property (nonatomic, strong) NSArray *dataRows;

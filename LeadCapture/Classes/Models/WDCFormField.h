@@ -30,7 +30,9 @@
 
 // we cache the tableViewCell here.  This is not a good idea for dynamic lists,
 // but since we're rendering a form with a finite number of fields, it's OK. We
-// would need to revisit this and dequeuReusableCell if we need to present long forms.
+// would need to revisit this and dequeuReusableCell if we need to present long forms,
+// but we would also need to start using transient copies of the model for persisting
+// data as the form is edited, so we don't lose data as cells scroll off the screen.
 @property (nonatomic, strong) WDCConfigDrivenTableViewCell *tableViewCell;
 
 + (id)initWithFieldDefinition:(NSDictionary*)dict;

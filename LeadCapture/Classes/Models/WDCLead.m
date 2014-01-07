@@ -6,14 +6,22 @@
 //  Copyright (c) 2014 LightMedium. All rights reserved.
 //
 
-#import "SFRestRequest.h"
-#import "SFRestAPI.h"
 #import "WDCLead.h"
+#import "WDCSalesForceDAO.h"
 #import "NSMutableString+Utilities.h"
 
 @implementation WDCLead
 
+static WDCSalesForceDAO *dao;
+static WDCLead *sharedInstance;
 static NSDictionary *prototypeObject;
+
+// create our static managed instance
++ (void)initialize
+{
+    dao = [[WDCSalesForceDAO alloc] init];
+    sharedInstance = [[WDCLead alloc] init];
+}
 
 // class method for serializeing a list of leads from the servie
 + (NSArray *)initWithArray:(NSArray *)rawLeads;
@@ -69,6 +77,13 @@ static NSDictionary *prototypeObject;
     return lead;
 }
 
+// a convenience class method for listing all of the WDCLeads from the service
+// wraps the instance method on a shared instance of WDCLead
++ (void)listLeads:(void(^)(BOOL success, id response, NSError *error))callback;
+{
+    [sharedInstance listLeads:callback];
+}
+
 // convenience method for retrieving the title and company
 // concatenated, ex. "CEO, Widgets Inc"
 - (NSString *)titleAndCompany;
@@ -79,19 +94,27 @@ static NSDictionary *prototypeObject;
 }
 
 // persist the instance to the service
-- (void)save;
+- (void)save:(void(^)(BOOL success, id response, NSError *error))callback;
 {
     // set the status
     [self setStatus:@"Open - Not Contacted"];
     
-    // TODO: check for id here and call update instead if it exists.
-    SFRestAPI *api = [[SFRestAPI alloc] init];
-    SFRestRequest *request = [api requestForCreateWithObjectType:@"Lead" fields:[self serializedSelf]];
-    [[SFRestAPI sharedInstance] send:request delegate:self];
+    // call save on the DAO
+    [dao saveLead:self withCallback:callback];
 }
 
+// list all of the WDCLeads from the service
+- (void)listLeads:(void(^)(BOOL success, id response, NSError *error))callback;
+{
+    [dao listLeads:^(BOOL success, id response, NSError *error) {
+//        NSLog(@"dao: %@", dao);
+        callback(success, response, error);
+    }];
+}
+
+
 // hydrate a dictionary to send to the service, containing the instances property values.
-- (NSDictionary *)serializedSelf
+- (NSDictionary *)serializedForSave;
 {
     NSMutableDictionary *fieldsForSave = [NSMutableDictionary dictionary];
     
@@ -111,34 +134,10 @@ static NSDictionary *prototypeObject;
     return fieldsForSave;
 }
 
-#pragma mark - SFRestDelegate
-    
-- (void)request:(SFRestRequest *)request didLoadResponse:(id)jsonResponse
+- (BOOL)isNew;
 {
-    NSDictionary *dict = (NSDictionary *)jsonResponse;
-    [self setId:[dict objectForKey:@"Id"]];
-    // TODO: notify the client controller that the save completed by
-    //       refactoring the save method to accept a block.  Is there an
-    //       api in SFRestAPI that uses blocks?
-}
-
-- (void)request:(SFRestRequest*)request didFailLoadWithError:(NSError*)error
-{
-    // TODO: notify the client controller that the save failed by
-    //       refactoring the save method to accept a block.  Is there an
-    //       api in SFRestAPI that uses blocks?
-}
-
-- (void)requestDidCancelLoad:(SFRestRequest *)request
-{
-    // handle error
-}
-
-- (void)requestDidTimeout:(SFRestRequest *)request
-{
-    // TODO: notify the client controller that the save failed by
-    //       refactoring the save method to accept a block.  Is there an
-    //       api in SFRestAPI that uses blocks?
+    BOOL retVal = ([self id] == nil) ? YES : NO;
+    return retVal;
 }
 
 @end

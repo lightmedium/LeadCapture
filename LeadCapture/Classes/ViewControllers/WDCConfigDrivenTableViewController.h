@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WDCFormDataProvider.h"
+#import "WDCPersistentModelProtocol.h"
 
 //@interface WDCConfigDrivenTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @interface WDCConfigDrivenTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
@@ -19,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 // This is the domain model that the form is representing
-@property (nonatomic, strong) NSObject *model;
+@property (nonatomic, strong) id <WDCPersistentModelProtocol> model;
 
 // This is the form definition that is loaded from the plist
 @property (nonatomic, strong) NSMutableDictionary *formDefinition;
