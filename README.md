@@ -23,8 +23,9 @@ tweak the native experience without releasing a new binary.
 ______________________________________________________________________________
 
 I tried to accomplish those goals by  
+------------------------------------
 focusing on:
-------------------------------------------------------
+------------
 
 1. Sticking a data model structure that marries nicely with the indexPath nature   
 of UITableView and UICollectionView.
