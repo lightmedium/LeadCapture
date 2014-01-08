@@ -15,7 +15,7 @@
 #import "MBProgressHUD.h"
 
 @interface WDCConfigDrivenTableViewController ()
-
+@property (nonatomic, strong) UIView *spinnerContainer;
 @end
 
 @implementation WDCConfigDrivenTableViewController
@@ -45,6 +45,12 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [self setSpinnerContainer:[[UIView alloc] initWithFrame:[[self tableView] frame]]];
+    [[self view] addSubview:[self spinnerContainer]];
+}
+
 #pragma mark - Nav Bar Button Item Touch Handlers
 
 - (void)saveTouched
@@ -57,7 +63,7 @@
         // TODO: this shouldn't be in the abstract view controller unless it's configurable
         // TODO: wrap this so the configutation is reusable
         // show the progress indicator
-        MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self view] animated:YES];
+        MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self spinnerContainer] animated:YES];
         [spinner setColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.92f]];
         [spinner setCornerRadius:0.0f];
         [spinner setLabelText:@"Loading Leads"];
@@ -67,8 +73,8 @@
         [spinner show:YES];
         
         // if valid, save the record
+        __weak WDCConfigDrivenTableViewController *weakSelf = self;
         [[self model] save:^(BOOL success, id response, NSError *error) {
-            
             // alert the user if there was an issue
             if ([error localizedDescription] || !success)
             {
@@ -80,8 +86,9 @@
             // UI stuff goes to the main thread
             dispatch_async(dispatch_get_main_queue(), ^{
                 // hide the progress indicator
-                [MBProgressHUD hideAllHUDsForView:[self view] animated:YES];
-
+                [MBProgressHUD hideAllHUDsForView:[self spinnerContainer] animated:YES];
+                [[weakSelf spinnerContainer] removeFromSuperview];
+                
                 // when save is done, go back
                 [[self navigationController] popViewControllerAnimated:YES];
             });

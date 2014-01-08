@@ -28,6 +28,10 @@
 #import "WDCLeadFormTableViewController.h"
 #import "MBProgressHUD.h"
 
+@interface RootViewController()
+@property (nonatomic, strong) UIView *spinnerContainer;
+@end
+
 @implementation RootViewController
 
 #pragma mark Misc
@@ -64,9 +68,12 @@
 {
     [super viewWillAppear:animated];
     
+    // create a container for the spinner
+    [self setSpinnerContainer:[[UIView alloc] initWithFrame:[[self tableView] frame]]];
+    [[self view] addSubview:[self spinnerContainer]];
+    
     // show the spinner
-    // TODO: wrap this so the configutation is reusable
-    MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self view] animated:YES];
+    MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self spinnerContainer] animated:YES];
     [spinner setColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.92f]];
     [spinner setCornerRadius:0.0f];
     [spinner setLabelText:@"Loading Leads"];
@@ -96,7 +103,8 @@
             [[weakSelf tableView] reloadData];
             
             // hide the spinner
-            [MBProgressHUD hideAllHUDsForView:[weakSelf view] animated:YES];
+            [MBProgressHUD hideAllHUDsForView:[weakSelf spinnerContainer] animated:YES];
+            [[weakSelf spinnerContainer] removeFromSuperview];
         });
     }];
 }
