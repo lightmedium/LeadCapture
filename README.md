@@ -5,7 +5,7 @@ LeadCapture
 ______________________________________________________________________________
 
 My aim with this project was not just to meet the requirements of the assessment   
-and bang out another list->detail/form application. I also wanted to further explore  
+and bang out another list/detail/form application. I also wanted to further explore  
 some concepts I've been toying with for the past several weeks.  
 
 My goals were:
@@ -22,7 +22,8 @@ remote configuration to resources available in the bundle, providing the ability
 tweak the native experience without releasing a new binary.
 ______________________________________________________________________________
 
-I tried to accomplish those goals through focusing on:
+I tried to accomplish those goals by  
+focusing on:
 ------------------------------------------------------
 
 1. Sticking a data model structure that marries nicely with the indexPath nature   
