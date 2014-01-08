@@ -15,4 +15,9 @@ I tried to accomplish those goals through focusing on:
 3. Using inferrence instead of if/else and switch/case statements to guide indirection.
 4. Inversion of control when it comes to the relationship between the UITableView delegate and the UITableViewCell.
 
+Some things I would do differently:
+
+1. Eliminate use of performSelector when reading properties from the domain model in the -(NSDictionary *)serializedForSave; method.
+2. Isolate and abstract the dependency between control logic and UITableView/UITableViewCell so that it would be trivial to swap it out for UICollectionView.
+
 I look forward to your feedback!

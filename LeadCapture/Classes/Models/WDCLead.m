@@ -144,7 +144,7 @@ int const kPhoneValidationError = 894;
         if ([self respondsToSelector:getter])
         {
             // TODO: make sure that ARC doesn't leak memory here before going into production.
-            id value = [self performSelector:getter];
+            NSObject *value = (NSObject *)[self performSelector:getter];
             if (value)
             {
                 [fieldsForSave setObject:value forKey:key];
