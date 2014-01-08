@@ -9,24 +9,32 @@
 #import <UIKit/UIKit.h>
 #import "WDCTextInputCell.h"
 #import "WDCFormField.h"
+#import "WDCPersistentModelProtocol.h"
 
 @implementation WDCTextInputCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(NSObject *)model fieldDefinition:(WDCFormField *)fieldDef;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(id<WDCPersistentModelProtocol>)model fieldDefinition:(WDCFormField *)fieldDef;
 {
     // cells are responsible for encapsulating their layout, style, and mapping of data
     if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier model:model fieldDefinition:fieldDef]))
     {
+        NSObject<WDCPersistentModelProtocol>*domainModel = (NSObject<WDCPersistentModelProtocol> *)[self model];
         _inputField = [[UITextField alloc] initWithFrame:CGRectZero];
         [[self contentView] addSubview:_inputField];
         
         [_inputField setDelegate:self];
         [_inputField setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
         [_inputField setPlaceholder:[[self fieldDefinition] label]];
-        [_inputField setText:[[self model] valueForKey:[[self fieldDefinition] boundProperty]]];
+        [_inputField setText:[domainModel valueForKey:[[self fieldDefinition] boundProperty]]];
         
         // we don't want to be able to select the form cells themselves.
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+        // if the record is new, the fields aren't editable for now.
+        if (![[self model] isMutable])
+        {
+            [_inputField setEnabled:NO];
+        }
     }
     return self;
 }

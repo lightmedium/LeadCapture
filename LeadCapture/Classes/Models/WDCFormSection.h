@@ -13,6 +13,6 @@
 // an array of fields in the section
 @property (nonatomic, strong) NSMutableArray *fields;
 
++ (WDCFormSection *)initWithSectionDefinition:(NSDictionary *)sectionDef;
 
-+ (id)initWithSectionDefinition:(NSDictionary *)sectionDef;
 @end

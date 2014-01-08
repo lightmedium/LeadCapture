@@ -8,6 +8,7 @@
 
 #import "WDCConfigDrivenTableViewController.h"
 #import "WDCConfigDrivenTableViewCell.h"
+#import "WDCFormDataProvider.h"
 #import "NSMutableString+Utilities.h"
 #import "WDCFormSection.h"
 #import "WDCFormField.h"
@@ -30,19 +31,16 @@
             _dataProvider = [WDCFormDataProvider initWithFormDefinition:_formDefinition];
         }
         
-        UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"save" style:UIBarButtonItemStyleDone target:self action:@selector(saveTouched)];
         UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelTouched)];
-        
-        // if this is an existing model, we disable the done button
-        // TODO: create a model protocol for the fiew (just this one for now)
-        //       properties that we need to access on the model.
-        if (![[self model] isNew])
-        {
-            [done setEnabled:NO];
-        }
-        
         [[self navigationItem] setLeftBarButtonItem:cancel];
-        [[self navigationItem] setRightBarButtonItem:done];
+        
+        // if the model is mutable, show the save button
+        if ([[self model] isMutable])
+        {
+            UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithTitle:@"save" style:UIBarButtonItemStyleDone target:self action:@selector(saveTouched)];
+            [[self navigationItem] setRightBarButtonItem:save];
+            [save setEnabled:YES];
+        }
     }
     return self;
 }
@@ -51,12 +49,13 @@
 
 - (void)saveTouched
 {
-    NSLog(@"done touched");
+    NSLog(@"save touched");
     // validate each cell
     
     if ([[self dataProvider] validateRequiredCells])
     {
         // TODO: this shouldn't be in the abstract view controller unless it's configurable
+        // TODO: wrap this so the configutation is reusable
         // show the progress indicator
         MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self view] animated:YES];
         [spinner setColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.92f]];
@@ -70,20 +69,21 @@
         // if valid, save the record
         [[self model] save:^(BOOL success, id response, NSError *error) {
             
-            dispatch_async(dispatch_get_main_queue(), ^{
+            // alert the user if there was an issue
+            if ([error localizedDescription] || !success)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"There was an error saving your lead. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 
+                [alert show];
+            }
+            
+            // UI stuff goes to the main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
                 // hide the progress indicator
                 [MBProgressHUD hideAllHUDsForView:[self view] animated:YES];
-                
-                if (success)
-                {
-                    // when save is done, go back
-                    [[self navigationController] popViewControllerAnimated:YES];
-                }
-                else
-                {
-                    // alert the user
-                }
+
+                // when save is done, go back
+                [[self navigationController] popViewControllerAnimated:YES];
             });
         }];
     }
@@ -94,6 +94,7 @@
 - (void)cancelTouched
 {
     NSLog(@"cancel touched");
+    [[self model] setSkipValidation:YES];
     [[self navigationController] popViewControllerAnimated:YES];
 }
 

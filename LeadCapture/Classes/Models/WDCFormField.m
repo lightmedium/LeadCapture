@@ -12,7 +12,7 @@
 
 @implementation WDCFormField
 
-+ (id)initWithFieldDefinition:(NSDictionary*)dict;
++ (WDCFormField *)initWithFieldDefinition:(NSDictionary*)dict;
 {
     // as long as the properties on our Lead model mirror the properties we receive from the
     // service, we won't have to touch this code as we add/remove mappings from the service.

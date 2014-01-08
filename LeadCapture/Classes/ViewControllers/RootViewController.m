@@ -24,10 +24,8 @@
 
 
 #import "RootViewController.h"
-
 #import "WDCLead.h"
 #import "WDCLeadFormTableViewController.h"
-#import "WDCSalesForceDAO.h"
 #import "MBProgressHUD.h"
 
 @implementation RootViewController
@@ -67,6 +65,7 @@
     [super viewWillAppear:animated];
     
     // show the spinner
+    // TODO: wrap this so the configutation is reusable
     MBProgressHUD *spinner = [MBProgressHUD showHUDAddedTo:[self view] animated:YES];
     [spinner setColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.92f]];
     [spinner setCornerRadius:0.0f];
@@ -76,10 +75,23 @@
     [spinner setMargin:8.0f];
     [spinner show:YES];
     
+    // load the list of Leads from the WDCLead model
+    // the WDCLead model wraps a DAO layer.
     __weak RootViewController *weakSelf = self;
     [WDCLead listLeads:^(BOOL success, id response, NSError *error) {
+        // somethign went wrong, alert the user
+        if ([error localizedDescription] || !success)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"There was an error loading your leads. Please try again later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alert show];
+        }
+        
+        // capture the records as serialized WDCLeads
         NSArray *records = [response objectForKey:@"records"];
         [weakSelf setDataRows:[WDCLead initWithArray:records]];
+        
+        // UI to the main thread
         dispatch_async(dispatch_get_main_queue(), ^{
             [[weakSelf tableView] reloadData];
             

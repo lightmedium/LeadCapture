@@ -15,13 +15,13 @@
 // array of sections in the form
 @property (nonatomic, strong) NSMutableArray *sections;
 
-+ (id)initWithFormDefinition:(NSDictionary *)formDef;
++ (WDCFormDataProvider *)initWithFormDefinition:(NSDictionary *)formDef;
 
 // convenience methods for accessing section and field models by index path
 - (WDCFormSection *)sectionModelForIndexPath:(NSIndexPath *)indexPath;
 - (WDCFormField *)fieldModelForIndexPath:(NSIndexPath *)indexPath;
 
-// kick of form validation
+// kick off form validation
 - (BOOL)validateRequiredCells;
 
 @end
