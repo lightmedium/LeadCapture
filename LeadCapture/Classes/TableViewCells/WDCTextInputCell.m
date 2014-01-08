@@ -30,7 +30,7 @@
         // we don't want to be able to select the form cells themselves.
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
-        // if the record is new, the fields aren't editable for now.
+        // ask the model if the model is editable
         if (![[self model] isMutable])
         {
             [_inputField setEnabled:NO];

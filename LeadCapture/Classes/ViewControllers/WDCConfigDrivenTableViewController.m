@@ -45,12 +45,6 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [self setSpinnerContainer:[[UIView alloc] initWithFrame:[[self tableView] frame]]];
-    [[self view] addSubview:[self spinnerContainer]];
-}
-
 #pragma mark - Nav Bar Button Item Touch Handlers
 
 - (void)saveTouched
@@ -60,6 +54,10 @@
     
     if ([[self dataProvider] validateRequiredCells])
     {
+        // add the spinner container view
+        [self setSpinnerContainer:[[UIView alloc] initWithFrame:[[self tableView] frame]]];
+        [[self view] addSubview:[self spinnerContainer]];
+        
         // TODO: this shouldn't be in the abstract view controller unless it's configurable
         // TODO: wrap this so the configutation is reusable
         // show the progress indicator

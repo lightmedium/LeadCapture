@@ -40,7 +40,7 @@
         return YES;
     }
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Not all values are valid" message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Please correct your entry." message:[error localizedDescription] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
     [self setBackgroundColor:[UIColor colorWithRed:1.0f green:0.95f blue:0.95f alpha:1.0f]];
     return NO;
