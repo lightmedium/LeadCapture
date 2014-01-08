@@ -22,16 +22,14 @@ remote configuration to resources available in the bundle, providing the ability
 tweak the native experience without releasing a new binary.
 ______________________________________________________________________________
 
-I tried to accomplish those goals by  
-------------------------------------
-focusing on:
-------------
+Approach was:
+-------------------------------------------------
 
-1. Sticking a data model structure that marries nicely with the indexPath nature   
+1. Stick to a data model structure that marries nicely with the indexPath nature   
 of UITableView and UICollectionView.
-2. Adding configuration data to the domain data in those models.
-3. Using inferrence instead of if/else and switch/case statements to guide indirection.
-4. Inversion of control when it comes to the relationship between the UITableView   
+2. Add configuration data to the domain data in those models.
+3. Use inferrence instead of if/else and switch/case statements to guide indirection.
+4. Employ inversion of control when it comes to the relationship between the UITableView   
 delegate and the UITableViewCell.
 ______________________________________________________________________________
 
