@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WDCPersistentModelProtocol.h"
 @class WDCConfigDrivenTableViewCell;
 
 @interface WDCFormField : NSObject
@@ -26,7 +27,7 @@
 @property (nonatomic) NSNumber *rowHeight;
 
 // the form field is a convenient place to provide access to the domain model
-@property (nonatomic, strong) NSObject *model;
+@property (nonatomic, strong) id<WDCPersistentModelProtocol> model;
 
 // we cache the tableViewCell here.  This is not a good idea for dynamic lists,
 // but since we're rendering a form with a finite number of fields, it's OK. We
@@ -35,7 +36,7 @@
 // data as the form is edited, so we don't lose data as cells scroll off the screen.
 @property (nonatomic, strong) WDCConfigDrivenTableViewCell *tableViewCell;
 
-+ (id)initWithFieldDefinition:(NSDictionary*)dict;
++ (WDCFormField *)initWithFieldDefinition:(NSDictionary*)dict;
 
 // Run the validateInput method on the field's cell
 - (BOOL)validate;

@@ -7,21 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDCPersistentModelProtocol.h"
 @class WDCFormField;
 
 @interface WDCConfigDrivenTableViewCell : UITableViewCell
 
 // each cell is given a domain model and a field configuration.
 // this is the domain model.
-@property (nonatomic, strong) NSObject *model;
+@property (nonatomic, strong) id<WDCPersistentModelProtocol> model;
 
-// this is the configuration model.
+// this is the field configuration model.
 @property (nonatomic, strong) WDCFormField *fieldDefinition;
 
 // designated initializer. Most cells end up needing to be
-// subclassed, or else put up with a lot of noise in your
-// tableView:cellForRowAtIndexPath: method
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(NSObject *)model fieldDefinition:(WDCFormField *)fieldDef;
+// subclassed, encapsulated, or else put up with a lot of noise in your
+// tableView:cellForRowAtIndexPath: method. Personally, I prefer
+// encapsulating that logic in the cell when it is abstract.
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier model:(id<WDCPersistentModelProtocol>)model fieldDefinition:(WDCFormField *)fieldDef;
 
 
 // This method must be implemented in the subclass.  It should return the value

@@ -13,7 +13,7 @@
 
 @interface WDCTextInputCell : WDCConfigDrivenTableViewCell <UITextFieldDelegate>
 
-// for editing the field
+// the editable field
 @property (nonatomic, strong) UITextField *inputField;
 
 @end

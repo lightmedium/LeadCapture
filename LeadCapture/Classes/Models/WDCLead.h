@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SFRestRequest.h"
 #import "WDCPersistentModelProtocol.h"
 
 @interface WDCLead : NSObject <WDCPersistentModelProtocol>
@@ -48,8 +47,25 @@
 // the model formatted for persistence
 - (NSDictionary *)serializedForSave;
 
-// let the abstract code know whether or not
-// the instance is new or existing.
+// encapsulate the logic for determining whether or not the
+// record can be edited.
 - (BOOL)isNew;
+
+// encapsulate the logic for determining whether or not the
+// record can be edited.
+- (BOOL)isMutable;
+
+// We need to be able to tell the model to skip validation in certain
+// UX scenarios, like canceling from a form
+- (void)setSkipValidation:(BOOL)val;
+
+
+// validation methods
+-(BOOL)validateFirstName:(id *)ioValue error:(NSError **)outError;
+-(BOOL)validateLastName:(id *)ioValue error:(NSError **)outError;
+-(BOOL)validateTitle:(id *)ioValue error:(NSError **)outError;
+-(BOOL)validateCompany:(id *)ioValue error:(NSError **)outError;
+-(BOOL)validateEmail:(id *)ioValue error:(NSError **)outError;
+-(BOOL)validatePhone:(id *)ioValue error:(NSError **)outError;
 
 @end

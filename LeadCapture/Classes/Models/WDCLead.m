@@ -10,16 +10,35 @@
 #import "WDCSalesForceDAO.h"
 #import "NSMutableString+Utilities.h"
 
+@interface WDCLead()
+{
+    BOOL _skipValidation;
+}
+@end
+
 @implementation WDCLead
 
 static WDCSalesForceDAO *dao;
 static WDCLead *sharedInstance;
 static NSDictionary *prototypeObject;
 
+NSString *const kValidationErrorDomain = @"ValidationErrorDomain";
+int const kFirstNameValidationError = 899;
+int const kLastNameValidationError = 898;
+int const kCompanyValidationError = 897;
+int const kTitleValidationError = 896;
+int const kEmailValidationError = 895;
+int const kPhoneValidationError = 894;
+
 // create our static managed instance
 + (void)initialize
 {
+    // The DAO instance is static, used for all requests
     dao = [[WDCSalesForceDAO alloc] init];
+    
+    // We need an instance to execute methods on the DAO from
+    // TODO: figure out why the SFRestAPI was failing to initialize
+    //       when the DAO listLeads method was static.
     sharedInstance = [[WDCLead alloc] init];
 }
 
@@ -135,10 +154,146 @@ static NSDictionary *prototypeObject;
     return fieldsForSave;
 }
 
+// encapsulate the logic for determining whether or not the
+// record is new.
 - (BOOL)isNew;
 {
     BOOL retVal = ([self id] == nil) ? YES : NO;
     return retVal;
 }
+
+// encapsulate the logic for determining whether or not the
+// record can be edited.
+- (BOOL)isMutable;
+{
+    return [self isNew];
+}
+
+#pragma mark - Validation
+
+// We need to be able to tell the model to skip validation in certain
+// UX scenarios, like canceling from a form
+- (void)setSkipValidation:(BOOL)val;
+{
+    _skipValidation = val;
+}
+
+// validation methods
+// we're only validating email to see if there's an "@" symbol
+// and checking for nil.  Not enough time to go further, but
+// validation is another thing that can be configured via a regex
+// pattern in the plist field definition
+-(BOOL)validateFirstName:(id *)ioValue error:(NSError **)outError
+{
+    // skip validation if the model doesn't want to be validated
+    if (_skipValidation) return YES;
+    
+    // simply check for presence
+    if ([self stringIsEmpty:ioValue])
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kFirstNameValidationError userInfo:@{NSLocalizedDescriptionKey: @"First Name is a required field"}];
+        return NO;
+    }
+
+    return YES;
+}
+
+-(BOOL)validateLastName:(id *)ioValue error:(NSError **)outError
+{
+    // skip validation if the model doesn't want to be validated
+    if (_skipValidation) return YES;
+    
+    // simply check for presence
+    if ([self stringIsEmpty:ioValue])
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kLastNameValidationError userInfo:@{NSLocalizedDescriptionKey: @"Last Name is a required field"}];
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(BOOL)validateCompany:(id *)ioValue error:(NSError **)outError
+{
+    // skip validation if the model doesn't want to be validated
+    if (_skipValidation) return YES;
+    
+    // simply check for presence
+    if ([self stringIsEmpty:ioValue])
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kCompanyValidationError userInfo:@{NSLocalizedDescriptionKey: @"Company is a required field"}];
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(BOOL)validateTitle:(id *)ioValue error:(NSError **)outError
+{
+    // skip validation if the model doesn't want to be validated
+    if (_skipValidation) return YES;
+    
+    // simply check for presence
+    if ([self stringIsEmpty:ioValue])
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kTitleValidationError userInfo:@{NSLocalizedDescriptionKey: @"Title is a required field"}];
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(BOOL)validatePhone:(id *)ioValue error:(NSError **)outError
+{
+    // skip validation if the model doesn't want to be validated
+    if (_skipValidation) return YES;
+    
+    // simply check for presence
+    if ([self stringIsEmpty:ioValue])
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kPhoneValidationError userInfo:@{NSLocalizedDescriptionKey: @"Phone is a required field"}];
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(BOOL)validateEmail:(id *)ioValue error:(NSError **)outError
+{
+    // skip validation if the model doesn't want to be validated
+    if (_skipValidation) return YES;
+    
+    // simply check for presence
+    if ([self stringIsEmpty:ioValue])
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kEmailValidationError userInfo:@{NSLocalizedDescriptionKey: @"Email is a required field"}];
+        return NO;
+    }
+    
+    // check for the "@" sign
+    NSString *email = (NSString*)*ioValue;
+    
+    if ([email rangeOfString:@"@"].location == NSNotFound)
+    {
+        *outError = [[NSError alloc] initWithDomain:kValidationErrorDomain code:kEmailValidationError userInfo:@{NSLocalizedDescriptionKey: @"The email address needs an \"@\""}];
+        return NO;
+    }
+    return YES;
+}
+
+
+#pragma mark - Validation Helpers
+// TODO: this would make a great category on NSString.
+- (BOOL)stringIsEmpty:(id *)ioValue
+{
+    NSString *val = (NSString*)*ioValue;
+    
+    if ((val == nil) || ([val length] < 1))
+    {
+        return YES;
+    }
+    return NO;
+}
+
 
 @end

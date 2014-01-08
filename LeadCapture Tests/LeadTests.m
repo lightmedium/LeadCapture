@@ -87,5 +87,77 @@
     XCTAssertTrue([actualTitleAndCompany isEqualToString:expectedTitleAndCompany], @"The concatenation of title and company didn't work the way we expected it to.");
 }
 
+- (void)testPresenceValidation
+{
+    // setup
+    WDCLead *lead = [[WDCLead alloc] init];
+    [lead setSkipValidation:NO];
+    NSArray *propertyKeys = @[@"firstName",
+                              @"lastName",
+                              @"company",
+                              @"title",
+                              @"phone"];
+    
+    [propertyKeys enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        // validate against empty string
+        NSError *emptyStringError = nil;
+        NSString *emptyString = @"";
+        BOOL emptyStringIsValid = [lead validateValue:&emptyString forKey:obj error:&emptyStringError];
+        XCTAssertFalse(emptyStringIsValid, @"An empty %@ should not have been valid", obj);
+        XCTAssertNotNil(emptyStringError, @"An empty %@ should have generated an error", obj);
+        
+        // validate against nil string
+        NSError *nilStringError = nil;
+        NSString *nilString = nil;
+        BOOL nilStringIsValid = [lead validateValue:&nilString forKey:obj error:&nilStringError];
+        XCTAssertFalse(nilStringIsValid, @"A nil %@ should not have been valid", obj);
+        XCTAssertNotNil(nilStringError, @"A nil %@ should have generated an error", obj);
+        
+        // validate against valid string
+        NSError *validStringError = nil;
+        NSString *validString = @"Something valid";
+        BOOL validStringIsValid = [lead validateValue:&validString forKey:obj error:&validStringError];
+        XCTAssertTrue(validStringIsValid, @"A valid %@ should have been valid", obj);
+        XCTAssertNil(validStringError, @"A valid %@ should have generated an error", obj);
+    }];
+}
+
+- (void)testEmailValidation
+{
+    // setup
+    WDCLead *lead = [[WDCLead alloc] init];
+    [lead setSkipValidation:NO];
+    NSString *obj = @"email";
+    
+    // sorry for the change in style, trying to get this out the door.
+    // validate against empty string
+    NSError *emptyStringError = nil;
+    NSString *emptyString = @"";
+    BOOL emptyStringIsValid = [lead validateValue:&emptyString forKey:obj error:&emptyStringError];
+    XCTAssertFalse(emptyStringIsValid, @"An empty %@ should not have been valid", obj);
+    XCTAssertNotNil(emptyStringError, @"An empty %@ should have generated an error", obj);
+    
+    // validate against nil string
+    NSError *nilStringError = nil;
+    NSString *nilString = nil;
+    BOOL nilStringIsValid = [lead validateValue:&nilString forKey:obj error:&nilStringError];
+    XCTAssertFalse(nilStringIsValid, @"A nil %@ should not have been valid", obj);
+    XCTAssertNotNil(nilStringError, @"A nil %@ should have generated an error", obj);
+    
+    // validate against string without "@"
+    NSError *atLessStringError = nil;
+    NSString *atLessString = @"thereisnotAThere";
+    BOOL atLessStringIsValid = [lead validateValue:&atLessString forKey:obj error:&atLessStringError];
+    XCTAssertFalse(atLessStringIsValid, @"A nil %@ should not have been valid", obj);
+    XCTAssertNotNil(atLessStringError, @"A nil %@ should have generated an error", obj);
+    
+    // validate against valid string
+    NSError *validStringError = nil;
+    NSString *validString = @"valid@valid.com";
+    BOOL validStringIsValid = [lead validateValue:&validString forKey:obj error:&validStringError];
+    XCTAssertTrue(validStringIsValid, @"A valid %@ should have been valid", obj);
+    XCTAssertNil(validStringError, @"A valid %@ should have generated an error", obj);
+}
+
 
 @end

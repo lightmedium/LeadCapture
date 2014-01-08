@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WDCFormDataProvider.h"
 #import "WDCPersistentModelProtocol.h"
+@class WDCFormDataProvider;
 
 //@interface WDCConfigDrivenTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @interface WDCConfigDrivenTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>

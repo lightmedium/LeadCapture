@@ -17,7 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:@"Lead Detail"];
+    NSString *title = ([[self model] isNew]) ? @"New Lead" : @"Lead Detail";
+    [self setTitle:title];
 }
 
 // Override to support conditional editing of the table view.

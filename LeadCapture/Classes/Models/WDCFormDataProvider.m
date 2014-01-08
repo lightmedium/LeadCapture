@@ -14,7 +14,7 @@
 
 // crawl over the form definition dictionary and serialize data into
 // a WDCFormDataProvider and its models
-+ (id)initWithFormDefinition:(NSDictionary *)formDef;
++ (WDCFormDataProvider *)initWithFormDefinition:(NSDictionary *)formDef;
 {
     WDCFormDataProvider *dp = [[WDCFormDataProvider alloc] init];
     
@@ -52,6 +52,13 @@
         
         [[section fields] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             WDCFormField *field = (WDCFormField *)obj;
+            
+            // we tell the fields to validate.
+            // fields tell their cells to validate.
+            // the cell is the junction of configuration, domain model, and current state.
+            // ordinarily this would be a violation of MVC, but I don't see it that
+            // way since there is no view-specific logic present that wouldn't still
+            // be present should the validation logic be orchestrated by a controller.
             if (![field validate])
             {
                 isValid = NO;
