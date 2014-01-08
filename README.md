@@ -40,7 +40,13 @@ Some things I would do differently:
 the -(NSDictionary *)serializedForSave; method.
 2. Isolate and abstract the dependency between control logic and UITableView/UITableViewCell   
 so that it would be trivial to swap it out for UICollectionView.
+3. Wrap the iOS 7-only apis so this builds in iOS 6.1
 ______________________________________________________________________________
+
+Notes: 
+* The SalesForce SDK doesn't appear to compiled for 64bit architectures.
+* This app will only run (for now) under iOS 7 - I have a reference to an iOS 7-only  
+api that needs to be wrapped and handled for both 6 and 7.
 
 I look forward to your feedback!
 ================================
