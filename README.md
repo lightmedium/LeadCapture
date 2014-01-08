@@ -1,12 +1,15 @@
-LeadCapture - Developer Assessment project
-==========================================
+LeadCapture
+===========
+- Developer Assessment project
+------------------------------
+______________________________________________________________________________
 
 My aim with this project was not just to meet the requirements of the assessment 
 and bang out another list->detail/form application. I also wanted to further explore 
 some concepts I've been toying with for the past several weeks.
 
 My goals were:
-______________
+--------------
 
 1. Limit, as much as possible, the amount of monotonous configuration-based logic that 
 tends to gum up UITableView delegates.
@@ -17,9 +20,10 @@ spent on "plumbing."
 3. Take a step toward an application that can be assembled at runtime by applying a 
 remote configuration to resources available in the bundle, providing the ability to 
 tweak the native experience without releasing a new binary.
+______________________________________________________________________________
 
 I tried to accomplish those goals through focusing on:
-______________________________________________________
+------------------------------------------------------
 
 1. Sticking a data model structure that marries nicely with the indexPath nature 
 of UITableView and UICollectionView.
@@ -27,13 +31,17 @@ of UITableView and UICollectionView.
 3. Using inferrence instead of if/else and switch/case statements to guide indirection.
 4. Inversion of control when it comes to the relationship between the UITableView 
 delegate and the UITableViewCell.
+______________________________________________________________________________
 
 Some things I would do differently:
-___________________________________
+-----------------------------------
 
 1. Eliminate use of performSelector when reading properties from the domain model in 
 the -(NSDictionary *)serializedForSave; method.
 2. Isolate and abstract the dependency between control logic and UITableView/UITableViewCell 
 so that it would be trivial to swap it out for UICollectionView.
+______________________________________________________________________________
 
 I look forward to your feedback!
+================================
+______________________________________________________________________________
