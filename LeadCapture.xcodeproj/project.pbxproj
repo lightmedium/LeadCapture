@@ -56,7 +56,6 @@
 		824A9DE51724E16400C9BD79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 824A9DE41724E16400C9BD79 /* main.m */; };
 		824A9E331724E2A900C9BD79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824A9E321724E2A900C9BD79 /* AppDelegate.m */; };
 		824A9E361724E45100C9BD79 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824A9E351724E45100C9BD79 /* RootViewController.m */; };
-		824A9E3D1724E9F400C9BD79 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 824A9E3C1724E9F400C9BD79 /* readme.txt */; };
 		824A9E3F1724EC6300C9BD79 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 824A9E3E1724EC6300C9BD79 /* Settings.bundle */; };
 		824A9E411724ECC600C9BD79 /* SalesforceSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 824A9E401724ECC600C9BD79 /* SalesforceSDKResources.bundle */; };
 		824A9E5F1724F02D00C9BD79 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 824A9E5B1724F02D00C9BD79 /* icon-72.png */; };
@@ -162,12 +161,12 @@
 		4F3F412817E7C9CA008B3283 /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
 		4F3F412917E7C9CA008B3283 /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
 		4F3F412A17E7C9CA008B3283 /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
-		4F3F412B17E7C9CA008B3283 /* libMKNetworkKit-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMKNetworkKit-iOS.a"; sourceTree = "<group>"; };
+		4F3F412B17E7C9CA008B3283 /* libMKNetworkKit-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libMKNetworkKit-iOS.a"; path = "LeadCapture/Dependencies/MKNetworkKit-iOS/libMKNetworkKit-iOS.a"; sourceTree = SOURCE_ROOT; };
 		4F3F412F17E7C9CA008B3283 /* SFNetworkCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkCoordinator.h; sourceTree = "<group>"; };
 		4F3F413017E7C9CA008B3283 /* SFNetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkEngine.h; sourceTree = "<group>"; };
 		4F3F413117E7C9CA008B3283 /* SFNetworkOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkOperation.h; sourceTree = "<group>"; };
 		4F3F413217E7C9CA008B3283 /* SFNetworkUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFNetworkUtils.h; sourceTree = "<group>"; };
-		4F3F413317E7C9CA008B3283 /* libSalesforceNetworkSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceNetworkSDK.a; sourceTree = "<group>"; };
+		4F3F413317E7C9CA008B3283 /* libSalesforceNetworkSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSalesforceNetworkSDK.a; path = LeadCapture/Dependencies/SalesforceNetworkSDK/libSalesforceNetworkSDK.a; sourceTree = SOURCE_ROOT; };
 		4F3F413417E7CA5C008B3283 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4F57794817F4CF5B004706EE /* SFRestAPI+Files.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+Files.h"; sourceTree = "<group>"; };
 		824A9DD51724E16400C9BD79 /* LeadCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeadCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +180,6 @@
 		824A9E321724E2A900C9BD79 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		824A9E341724E45000C9BD79 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ViewControllers/RootViewController.h; sourceTree = "<group>"; };
 		824A9E351724E45100C9BD79 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ViewControllers/RootViewController.m; sourceTree = "<group>"; };
-		824A9E3C1724E9F400C9BD79 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		824A9E3E1724EC6300C9BD79 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
 		824A9E401724ECC600C9BD79 /* SalesforceSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SalesforceSDKResources.bundle; path = Resources/SalesforceSDKResources.bundle; sourceTree = "<group>"; };
 		824A9E5B1724F02D00C9BD79 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icon-72.png"; sourceTree = "<group>"; };
@@ -195,9 +193,9 @@
 		824A9E671724F03D00C9BD79 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "Resources/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		824A9E681724F03D00C9BD79 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		824A9E691724F03D00C9BD79 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
-		824A9F321725079000C9BD79 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		824A9F331725079000C9BD79 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		824A9FDB1725079100C9BD79 /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsqlcipher.a; sourceTree = "<group>"; };
+		824A9F321725079000C9BD79 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = LeadCapture/Dependencies/openssl/libcrypto.a; sourceTree = SOURCE_ROOT; };
+		824A9F331725079000C9BD79 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = LeadCapture/Dependencies/openssl/libssl.a; sourceTree = SOURCE_ROOT; };
+		824A9FDB1725079100C9BD79 /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlcipher.a; path = LeadCapture/Dependencies/sqlcipher/libsqlcipher.a; sourceTree = SOURCE_ROOT; };
 		824A9FE71725098F00C9BD79 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		824A9FE91725099600C9BD79 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		824A9FEB17250ADA00C9BD79 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -239,7 +237,7 @@
 		8273F1851778F39F005E31A6 /* UIBarButtonItem+SFAddtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SFAddtions.h"; sourceTree = "<group>"; };
 		8273F1861778F39F005E31A6 /* UIDevice+SFHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SFHardware.h"; sourceTree = "<group>"; };
 		8273F1871778F39F005E31A6 /* UILabel+SFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SFAdditions.h"; sourceTree = "<group>"; };
-		8273F1881778F39F005E31A6 /* libSalesforceCommonUtils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceCommonUtils.a; sourceTree = "<group>"; };
+		8273F1881778F39F005E31A6 /* libSalesforceCommonUtils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSalesforceCommonUtils.a; path = LeadCapture/Dependencies/SalesforceCommonUtils/libSalesforceCommonUtils.a; sourceTree = SOURCE_ROOT; };
 		82B36E3B1828858600B0C975 /* SFAuthenticationViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthenticationViewHandler.h; sourceTree = "<group>"; };
 		82B36E3C1828858600B0C975 /* SFAuthErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthErrorHandler.h; sourceTree = "<group>"; };
 		82B36E3D1828858600B0C975 /* SFAuthErrorHandlerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAuthErrorHandlerList.h; sourceTree = "<group>"; };
@@ -248,11 +246,11 @@
 		82BBB59B1793941D00374DD8 /* SFRestAPI+QueryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFRestAPI+QueryBuilder.h"; sourceTree = "<group>"; };
 		82BBB59C1793941D00374DD8 /* SFRestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRestAPI.h; sourceTree = "<group>"; };
 		82BBB59D1793941D00374DD8 /* SFRestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRestRequest.h; sourceTree = "<group>"; };
-		82BBB59E1793941D00374DD8 /* libSalesforceNativeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceNativeSDK.a; sourceTree = "<group>"; };
+		82BBB59E1793941D00374DD8 /* libSalesforceNativeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSalesforceNativeSDK.a; path = LeadCapture/Dependencies/SalesforceNativeSDK/libSalesforceNativeSDK.a; sourceTree = SOURCE_ROOT; };
 		82BBB5A31793944400374DD8 /* SFOAuthCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthCoordinator.h; sourceTree = "<group>"; };
 		82BBB5A41793944400374DD8 /* SFOAuthCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthCredentials.h; sourceTree = "<group>"; };
 		82BBB5A51793944400374DD8 /* SFOAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFOAuthInfo.h; sourceTree = "<group>"; };
-		82BBB5A61793944400374DD8 /* libSalesforceOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceOAuth.a; sourceTree = "<group>"; };
+		82BBB5A61793944400374DD8 /* libSalesforceOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSalesforceOAuth.a; path = LeadCapture/Dependencies/SalesforceOAuth/libSalesforceOAuth.a; sourceTree = SOURCE_ROOT; };
 		82BBB5AB1793946800374DD8 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		82BBB5AC1793946800374DD8 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		82BBB5AD1793946800374DD8 /* SalesforceSDKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesforceSDKConstants.h; sourceTree = "<group>"; };
@@ -273,7 +271,7 @@
 		82BBB5BC1793946800374DD8 /* SFSmartStoreDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSmartStoreDatabaseManager.h; sourceTree = "<group>"; };
 		82BBB5BD1793946800374DD8 /* SFSoupIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFSoupIndex.h; sourceTree = "<group>"; };
 		82BBB5BE1793946800374DD8 /* SFStoreCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFStoreCursor.h; sourceTree = "<group>"; };
-		82BBB5BF1793946800374DD8 /* libSalesforceSDKCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSalesforceSDKCore.a; sourceTree = "<group>"; };
+		82BBB5BF1793946800374DD8 /* libSalesforceSDKCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSalesforceSDKCore.a; path = LeadCapture/Dependencies/SalesforceSDKCore/libSalesforceSDKCore.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,7 +572,6 @@
 		824A9DDE1724E16400C9BD79 /* LeadCapture */ = {
 			isa = PBXGroup;
 			children = (
-				824A9E3C1724E9F400C9BD79 /* readme.txt */,
 				824A9E301724E2A900C9BD79 /* Classes */,
 				824A9F301725079000C9BD79 /* Dependencies */,
 				824A9E421724EF9800C9BD79 /* Resources */,
@@ -927,7 +924,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				824A9DE31724E16400C9BD79 /* InfoPlist.strings in Resources */,
-				824A9E3D1724E9F400C9BD79 /* readme.txt in Resources */,
 				824A9E3F1724EC6300C9BD79 /* Settings.bundle in Resources */,
 				824A9E411724ECC600C9BD79 /* SalesforceSDKResources.bundle in Resources */,
 				824A9E5F1724F02D00C9BD79 /* icon-72.png in Resources */,
@@ -1059,16 +1055,15 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
-					/Users/lightmedium/Sites/GoodHaggle/GoodHaggle_ios/GoodHaggle/lib,
-					"/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/MKNetworkKit-iOS",
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/openssl,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceCommonUtils,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNativeSDK,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNetworkSDK,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceOAuth,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceSDKCore,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/sqlcipher,
+					"$(SRCROOT)/lib",
+					"$(SRCROOT)/LeadCapture/Dependencies/MKNetworkKit-iOS",
+					"$(SRCROOT)/LeadCapture/Dependencies/openssl",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceCommonUtils",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNativeSDK",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNetworkSDK",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceOAuth",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceSDKCore",
+					"$(SRCROOT)/LeadCapture/Dependencies/sqlcipher",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1116,16 +1111,15 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/lib,
-					/Users/lightmedium/Sites/GoodHaggle/GoodHaggle_ios/GoodHaggle/lib,
-					"/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/MKNetworkKit-iOS",
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/openssl,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceCommonUtils,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNativeSDK,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceNetworkSDK,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceOAuth,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/SalesforceSDKCore,
-					/Users/lightmedium/Sites/SalesForce/LeadCapture/LeadCapture/Dependencies/sqlcipher,
+					"$(SRCROOT)/lib",
+					"$(SRCROOT)/LeadCapture/Dependencies/MKNetworkKit-iOS",
+					"$(SRCROOT)/LeadCapture/Dependencies/openssl",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceCommonUtils",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNativeSDK",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceNetworkSDK",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceOAuth",
+					"$(SRCROOT)/LeadCapture/Dependencies/SalesforceSDKCore",
+					"$(SRCROOT)/LeadCapture/Dependencies/sqlcipher",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
