@@ -47,7 +47,6 @@
 		1BCD7074187B736D000F2576 /* WDCLead.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B84DAE5187A28260093D257 /* WDCLead.m */; };
 		1BCD707A187B7840000F2576 /* lead01.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD7078187B7840000F2576 /* lead01.json */; };
 		1BCD707B187B7840000F2576 /* leadsArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BCD7079187B7840000F2576 /* leadsArray.json */; };
-		2797169B187DBC1400D3C56C /* NSMutableString_UtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797169A187DBC1400D3C56C /* NSMutableString_UtilitiesTests.m */; };
 		4F3F413517E7CA5C008B3283 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413417E7CA5C008B3283 /* ImageIO.framework */; };
 		4F3F413617E7CA71008B3283 /* libMKNetworkKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F412B17E7C9CA008B3283 /* libMKNetworkKit-iOS.a */; };
 		4F3F413717E7CA84008B3283 /* libSalesforceNetworkSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3F413317E7C9CA008B3283 /* libSalesforceNetworkSDK.a */; };
@@ -154,7 +153,6 @@
 		1BCD7079187B7840000F2576 /* leadsArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = leadsArray.json; path = fixtures/leadsArray.json; sourceTree = "<group>"; };
 		1BD560C2187A4A87004905C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1BDFAC14187C7F9D00D19A1F /* WDCPersistentModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDCPersistentModelProtocol.h; path = Protocols/WDCPersistentModelProtocol.h; sourceTree = "<group>"; };
-		2797169A187DBC1400D3C56C /* NSMutableString_UtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSMutableString_UtilitiesTests.m; path = "lib/LMUtilities Tests/NSMutableString_UtilitiesTests.m"; sourceTree = SOURCE_ROOT; };
 		4F3F412517E7C9CA008B3283 /* MKNetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
 		4F3F412617E7C9CA008B3283 /* MKNetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
 		4F3F412717E7C9CA008B3283 /* MKNetworkOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
@@ -400,19 +398,10 @@
 			children = (
 				1BCD6758187C9C62006425F2 /* MBProgressHUD */,
 				1BCD704A187A508C000F2576 /* OCMock */,
-				1B84DB2E187A3DAB0093D257 /* LMUtilities Tests */,
 				1B84DB30187A3DAB0093D257 /* NSMutableString+Utilities.h */,
 				1B84DB31187A3DAB0093D257 /* NSMutableString+Utilities.m */,
 			);
 			name = lib;
-			sourceTree = "<group>";
-		};
-		1B84DB2E187A3DAB0093D257 /* LMUtilities Tests */ = {
-			isa = PBXGroup;
-			children = (
-				2797169A187DBC1400D3C56C /* NSMutableString_UtilitiesTests.m */,
-			);
-			path = "LMUtilities Tests";
 			sourceTree = "<group>";
 		};
 		1B9D57FD187C5B70007833FC /* Services */ = {
@@ -976,7 +965,6 @@
 				824A9DE51724E16400C9BD79 /* main.m in Sources */,
 				1B9D5800187C5B88007833FC /* WDCSalesForceDAO.m in Sources */,
 				1B84DB2B187A39930093D257 /* WDCConfigDrivenTableViewController.m in Sources */,
-				2797169B187DBC1400D3C56C /* NSMutableString_UtilitiesTests.m in Sources */,
 				1B84DB33187A3DAB0093D257 /* NSMutableString+Utilities.m in Sources */,
 				1BCD675D187C9C7A006425F2 /* MBProgressHUD.m in Sources */,
 				1BCD7072187A7704000F2576 /* WDCConfigDrivenTableViewCell.m in Sources */,
